@@ -1335,15 +1335,17 @@ void VPinball::MainMsgLoop()
          {
             // std::cout << "test" << std::endl; // Main Loop
             Ball *b = g_pplayer->m_pactiveball;
+
             if (b)
             {
-
                Vertex3Ds pos = b->m_d.m_pos;
+               
                std::cout << "X: " << pos.x << std::endl;
                std::cout << "Y: " << pos.y << std::endl;
                std::cout << "Z: " << pos.z << std::endl;
                Sleep(10);
             }
+            
             g_pplayer->Render(); // always render on idle
          }
          else
@@ -1459,7 +1461,7 @@ void VPinball::OnClose()
          SaveValueBool("Editor", "WindowMaximized", !!IsZoomed());
       }
       SaveDockRegistrySettings(DOCKER_REGISTRY_KEY);
-
+      FreeConsole();
       CWnd::OnClose();
    }
 }
