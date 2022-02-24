@@ -629,6 +629,7 @@ private:
 
 public:
    void StopPlayer();
+   void *Font(char *Caption, int size, bool bold, bool italic);
    void ToggleFPS();
    void InitFPS();
    bool ShowFPSonly() const;

@@ -1993,6 +1993,7 @@ void Player::InitStatic()
 
    // Finish the frame.
    m_pin3d.m_pd3dPrimaryDevice->EndScene();
+   
 
    // Readback static buffer, convert 16bit to 32bit float, and accumulate
    if (!m_cameraMode)
@@ -4852,7 +4853,12 @@ void Player::LockForegroundWindow(const bool enable)
 #endif
 
 }
-
+std::string float_to_str(float f)
+{
+   std::stringstream stream;
+   stream << f;
+   return stream.str();
+}
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 void Player::Render()
@@ -4873,7 +4879,7 @@ void Player::Render()
 
    if (m_sleeptime > 0)
       Sleep(m_sleeptime - 1);
-
+   
    m_pininput.ProcessKeys(/*sim_msec,*/ -(int)(timeforframe / 1000)); // trigger key events mainly for VPM<->VP rountrip
 
 #ifdef DEBUGPHYSICS
@@ -4903,7 +4909,15 @@ void Player::Render()
    m_pin3d.m_pd3dPrimaryDevice->CopySurface(m_pin3d.m_pddsBackBuffer, m_pin3d.m_pddsStatic);
    m_pin3d.m_pd3dPrimaryDevice->CopySurface(m_pin3d.m_pddsZBuffer, m_pin3d.m_pddsStaticZ); // cannot be called inside BeginScene -> EndScene cycle
 #endif
+   if (m_pactiveball) // Debug Ball Pos
+   {
+      Vertex3Ds pos = m_pactiveball->m_d.m_pos;
+      DebugPrint(0, 80, float_to_str(pos.x).c_str(), false);
+      DebugPrint(0, 100, float_to_str(pos.y).c_str(), false);
+      DebugPrint(0, 120, float_to_str(pos.z).c_str(), false);
 
+
+   }
    // Physics/Timer updates, done at the last moment, especially to handle key input (VP<->VPM rountrip) and animation triggers
    //if ( !cameraMode )
    if (m_minphyslooptime == 0) // (vsync) latency reduction code not active? -> Do Physics Updates here
@@ -5950,6 +5964,7 @@ void Player::StopPlayer()
 
    LockForegroundWindow(false);
 }
+
 
 INT_PTR CALLBACK PauseProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
