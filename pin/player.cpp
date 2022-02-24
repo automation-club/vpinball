@@ -4912,11 +4912,16 @@ void Player::Render()
    if (m_pactiveball) // Debug Ball Pos
    {
       Vertex3Ds pos = m_pactiveball->m_d.m_pos;
-      DebugPrint(0, 80, float_to_str(pos.x).c_str(), false);
-      DebugPrint(0, 100, float_to_str(pos.y).c_str(), false);
-      DebugPrint(0, 120, float_to_str(pos.z).c_str(), false);
+      Vertex3Ds velo = m_pactiveball->m_d.m_vel;
 
-
+      DebugPrint(0, 80, "Pos: ", false);
+      DebugPrint(0, 100, float_to_str(pos.x).c_str(), false);
+      DebugPrint(0, 120, float_to_str(pos.y).c_str(), false);
+      DebugPrint(0, 140, float_to_str(pos.z).c_str(), false);
+      DebugPrint(0, 160, "Velocity: ", false);
+      DebugPrint(0, 180, float_to_str(velo.x).c_str(), false);
+      DebugPrint(0, 200, float_to_str(velo.y).c_str(), false);
+      DebugPrint(0, 220, float_to_str(velo.z).c_str(), false);
    }
    // Physics/Timer updates, done at the last moment, especially to handle key input (VP<->VPM rountrip) and animation triggers
    //if ( !cameraMode )
