@@ -21,7 +21,6 @@ static class Socket
         socket.send(zmq::buffer(data), zmq::send_flags::none);
         zmq::message_t reply {};
         socket.recv(reply, zmq::recv_flags::none);
-        std::cout << "Received " << reply.to_string(); 
-
-   }
+        std::cout << "Received " << reply.to_string();
+    }
 };
