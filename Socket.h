@@ -33,7 +33,6 @@
     }
     catch (zmq::error_t::exception)
     {
-       std::cout << "Error Sending Data" << std::endl;
+      std::cout << "Error" << std::endl;
     }
-   }
 };
