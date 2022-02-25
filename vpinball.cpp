@@ -1339,10 +1339,11 @@ void VPinball::MainMsgLoop()
             if (b)
             {
                Vertex3Ds pos = b->m_d.m_pos;
-               
+               std::cout << "-----------------------" << std::endl;
                std::cout << "X: " << pos.x << std::endl;
                std::cout << "Y: " << pos.y << std::endl;
                std::cout << "Z: " << pos.z << std::endl;
+               std::cout << "-----------------------" << std::endl;
                Sleep(10);
             }
             
