@@ -3,18 +3,27 @@
 #include <iostream>
 
 #include <zmq.hpp>
-static class Socket
+ class Socket
 {
-public:
-
- static void send(std::string data) 
-   {
     zmq::context_t context { 1 };
     zmq::socket_t socket { context, zmq::socket_type::req };
+
+ public:
+      Socket() {
+         try
+         {
+            socket.connect("tcp://localhost:5555");
+         }
+         catch (zmq::error_t::exception)
+         {
+            std::cout << "Error" << std::endl;
+         }
+
+    }
+  void send(std::string data) 
+   {
     try
     {
-       socket.connect("tcp://localhost:5555");
-
        std::cout << "Sending Data "
                  << "..." << std::endl;
        socket.send(zmq::buffer(data), zmq::send_flags::none);

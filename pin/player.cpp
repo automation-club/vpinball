@@ -4862,6 +4862,8 @@ std::string float_to_str(float f)
 }
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+Socket *sock = new Socket();
+
 void Player::Render()
 {
    U64 timeforframe = usec();
@@ -4925,8 +4927,8 @@ void Player::Render()
       DebugPrint(0, 200, float_to_str(velo.y).c_str(), false);
       DebugPrint(0, 220, float_to_str(velo.z).c_str(), false);
       // Socket output the data
-      Socket::send(posXYZ);
-      Socket::send(veloXYZ);
+      sock->send(posXYZ);
+      sock->send(veloXYZ);
    }
    // Physics/Timer updates, done at the last moment, especially to handle key input (VP<->VPM rountrip) and animation triggers
    //if ( !cameraMode )
