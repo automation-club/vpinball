@@ -11,4 +11,4 @@ while True:
     print(f"Received request: {message}")
 
     #  Send reply back to client
-    socket.send("")
+    socket.send_string("")
