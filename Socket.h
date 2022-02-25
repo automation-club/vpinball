@@ -5,9 +5,6 @@
 #include <zmq.hpp>
 static class Socket
 {
-
-         
-
 public:
 
  static  void send(std::string data)
