@@ -4914,7 +4914,7 @@ void Player::Render()
    {
       Vertex3Ds pos = m_pactiveball->m_d.m_pos;
       Vertex3Ds velo = m_pactiveball->m_d.m_vel;
-      std::string posXYZ = "posX: " + float_to_str(pos.x) + "," + "posY " + float_to_str(pos.y) + ", " + "pos Z: " + float_to_str(pos.z);
+      std::string posXYZ = "posX: " + float_to_str(pos.x) + ", " + "posY " + float_to_str(pos.y) + ", " + "pos Z: " + float_to_str(pos.z);
       std::string veloXYZ = "VeloX: " + float_to_str(velo.x) + ", " + "VeloY " + float_to_str(velo.y) + ", " + "VeloZ: " + float_to_str(velo.z);
       DebugPrint(0, 80, "Pos: ", false);
       DebugPrint(0, 100, float_to_str(pos.x).c_str(), false);
