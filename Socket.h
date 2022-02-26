@@ -52,7 +52,10 @@ public:
       }
       catch (zmq::error_t e)
       {
-         std::cout << "Error disconnecting data" << e.what() << std::endl;
+
+         std::cout << "Error with socket."
+             << "Please check that Python socket server is running and restart the table." 
+             << std::endl;
       }
    };
 };
