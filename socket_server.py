@@ -1,23 +1,28 @@
 import zmq
 import threading
 import keyboard
-
+import os
 
 def handle_socket_server(socket):
     while True:
-        #  Wait for next request from client
+        #  Wait for next request from qclient
         message = socket.recv()
         print(f"[RECEIVED FROM CLIENT]: {message}")
 
         #  Send reply back to client
-        socket.send("")
+        socket.send("".encode())
 
 
 def detect_quit_keypress():
     while True:
         if keyboard.is_pressed('q'):
             print("Shutdown key detected.")
-            break
+            quit()
+
+
+def launch_visual_pinball():
+    VISUAL_PINBALL_PATH = r"C:\Users\jmamt\OneDrive\Documents\git_repos\vpinball\x64\Debug\VPinballX.exe"
+    os.system(VISUAL_PINBALL_PATH)
 
 
 def main():
@@ -31,10 +36,13 @@ def main():
     server_thread = threading.Thread(target=handle_socket_server, args=(socket,), daemon=True)
     # Thread for handling shutdown (press Q)
     server_shutdown_thread = threading.Thread(target=detect_quit_keypress, args=())
+    # Thread for starting Visual Pinball
+    launch_vp_thread = threading.Thread(target=launch_visual_pinball, args=())
 
     # Start Threads
     server_thread.start()
     server_shutdown_thread.start()
+    launch_vp_thread.start()
 
     server_shutdown_thread.join()
     # Run once shutdown key detected

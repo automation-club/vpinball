@@ -13,7 +13,7 @@ public:
    {
       try
       {
-         socket.connect("tcp://localhost:5555");
+        socket.connect("tcp://localhost:5555");
       }
       catch (zmq::error_t::exception)
       {
@@ -33,7 +33,9 @@ public:
       }
       catch (zmq::error_t::exception)
       {
-         std::cout << "Error" << std::endl;
+         std::cout << "Error with socket."
+             << "Please check that Python socket server is running and restart the table." 
+             << std::endl;
       }
    };
 };
