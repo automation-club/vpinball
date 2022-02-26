@@ -17,11 +17,12 @@ def detect_quit_keypress():
     while True:
         if keyboard.is_pressed('q'):
             print("Shutdown key detected.")
-            quit()
+            break
 
 
 def launch_visual_pinball():
-    VISUAL_PINBALL_PATH = r"C:\Users\jmamt\OneDrive\Documents\git_repos\vpinball\x64\Debug\VPinballX.exe"
+    VISUAL_PINBALL_PATH = r".\x64\Debug\VPinballX.exe"
+
     os.system(VISUAL_PINBALL_PATH)
 
 
