@@ -913,7 +913,7 @@ bool VPinball::LoadFile(const bool updateEditor)
    std::string szFileName = "C:\\Visual Pinball\\Tables\\Bad Cats VPX 1.2.1b.GRHR.vpx";
    std::cout << "[LAUNCHING] Automatically Launching Bad Cats Table \n"
              << "[LAUNCHING] Path: " << szFileName << std::endl
-             << "[LAUNCHING] Edit path at vpinball/vinpall.cpp - search for szFileName";
+             << "[LAUNCHING] Edit path at vpinball/vinpall.cpp - search for szFileName" << std::endl;
 
    //std::vector<std::string> szFileName;
    //string szInitialDir;
@@ -1736,7 +1736,6 @@ STDMETHODIMP VPinball::QuitPlayer(int CloseType)
 {
    if (g_pplayer)
       g_pplayer->m_ptable->QuitPlayer(CloseType);
-   std::cout << "reached";
 
    return S_OK;
 }
