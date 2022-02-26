@@ -12,16 +12,17 @@ class Socket
 public:
    Socket()
    {
-      if (socket.handle() != nullptr)
+      if (socket.handle() != nullptr) // If we have a connection don't create a new one
       {
          try
          {
-            std::cout << "Connecting to " << sockAddr << std::endl;
+            std::cout << "Connecting to " << sockAddr << std::endl; // Make sure the 
             socket.connect(sockAddr);
+            std::cout << "Error " << &zmq::error_t::what << std::endl;
          }
-         catch (zmq::error_t)
+         catch (zmq::error_t &e)
          {
-            std::cout << "Error" << &zmq::error_t::what << std::endl;
+            std::cout << "Error " << e.what() << std::endl;
          }
       }
    }
@@ -29,14 +30,17 @@ public:
    
    void send(std::string data)
    {
-     
-        // std::cout << "Sending Data "<< std::endl;
-      if (&zmq::error_t::num)
+      try
       {
          socket.send(zmq::buffer(data), zmq::send_flags::none);
          zmq::message_t reply {};
          socket.recv(reply, zmq::recv_flags::none);
       }
+      catch (zmq::error_t e)
+      {
+         std::cout << "Error Sending Data " << e.what() << std::endl;
+      }
+        
    };
    void cleanup()
    {
@@ -46,9 +50,9 @@ public:
          socket.disconnect(sockAddr);
 
       }
-      catch (zmq::error_t)
+      catch (zmq::error_t e)
       {
-         std::cout << "Error disconnecting data" << &zmq::error_t::what << std::endl;
+         std::cout << "Error disconnecting data" << e.what() << std::endl;
       }
    };
 };
