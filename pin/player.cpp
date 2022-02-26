@@ -1176,7 +1176,7 @@ void Player::DebugPrint(int x, int y, LPCSTR text, bool center /*= false*/)
    }
 #endif
 }
-
+ Socket *sock;
 HRESULT Player::Init()
 {
    TRACE_FUNCTION();
@@ -1187,7 +1187,7 @@ HRESULT Player::Init()
 
    m_ptable->m_progressDialog.SetProgress(10);
    m_ptable->m_progressDialog.SetName("Initializing Visuals...");
-
+  sock = new Socket();
    InitKeys();
 
    m_PlayMusic = LoadValueBoolWithDefault("Player", "PlayMusic", true);
@@ -4862,7 +4862,6 @@ std::string float_to_str(float f)
 }
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Socket *sock = new Socket();
 
 void Player::Render()
 {
@@ -5116,12 +5115,14 @@ void Player::Render()
       else if (m_closeDown)
       {
          PauseMusic();
-
+           
          size_t option;
 
          if (m_closeType == 2)
          {
+            sock->cleanup();
             exit(-9999); // blast into space
+           
          }
          else if ((m_closeType == 0) && !g_pvp->m_disable_pause_menu)
          {
@@ -5132,6 +5133,7 @@ void Player::Render()
          }
          else //m_closeType == all others
          {
+            sock->cleanup();
             option = ID_QUIT;
             SendMessage(g_pvp->GetHwnd(), WM_COMMAND, ID_FILE_EXIT, NULL);
          }
@@ -5143,6 +5145,7 @@ void Player::Render()
 
          if (option == ID_QUIT)
          {
+            sock->cleanup();
             if (g_pvp->m_open_minimized && !g_pvp->m_disable_pause_menu)
                SendMessage(g_pvp->GetHwnd(), WM_COMMAND, ID_FILE_EXIT, NULL);
             m_ptable->SendMessage(WM_COMMAND, ID_TABLE_STOP_PLAY, 0);
