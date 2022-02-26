@@ -4,6 +4,7 @@
 
 # Project Specific
 shader/
+x64/
 
 ### C++ ###
 # Prerequisites
