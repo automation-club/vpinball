@@ -5128,8 +5128,10 @@ void Player::Render()
          {
             ShowCursor(TRUE);
             option = DialogBox(g_pvp->theInstance, MAKEINTRESOURCE(IDD_GAMEPAUSE), GetHwnd(), PauseProc);
+            std::cout << "Exit Close type 0" << std::endl;
             if(option != ID_DEBUGWINDOW)
                ShowCursor(FALSE);
+
          }
          else //m_closeType == all others
          {
