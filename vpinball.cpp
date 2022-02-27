@@ -911,7 +911,7 @@ void VPinball::DoPlay(const bool _cameraMode)
 
 bool VPinball::LoadFile(const bool updateEditor)
 {
-   std::string szFileName = m_szMyPath + "tables\\Nudge Test and Calibration.vpx";
+   std::string szFileName = m_szMyPath + "Tables\\Bad Cats VPX 1.2.1b.GRHR.vpx";
    //std::string szFileName = "C:\\Users\\aubte\\Desktop\\Web-Dev\\vpinball\\x64\\Debug\\tables\\Bad Cats VPX 1.2.1b.GRHR.vpx";
    std::cout << "[LAUNCHING] Automatically Launching Bad Cats Table \n"
              << "[LAUNCHING] Path: " << szFileName << std::endl
@@ -1351,7 +1351,8 @@ void VPinball::MainMsgLoop()
                CComObject<PinTable> *const pt = GetActiveTable();
                if (pt)
                   CloseTable(pt);
-                  // then select the new one, and if one was selected, play it remove this if autoload
+               // then select the new one, and if one was selected, play it remove this if autoload
+            }
 #ifdef AUTOLOAD
                m_table_played_via_SelectTableOnStart= 
 #endif AUTOLOAD
@@ -1360,7 +1361,7 @@ void VPinball::MainMsgLoop()
             //   if (m_table_played_via_SelectTableOnStart)
                //   DoPlay(false);
 
-            }
+            
 
             WaitMessage(); // otherwise wait for input
          }
