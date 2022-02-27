@@ -22,6 +22,7 @@ using namespace std;
 #define RECENT_FIRST_MENU_IDM 5000 // ID of the first recent file list filename
 #define OPEN_MDI_TABLE_IDM IDW_FIRSTCHILD // ID of the first open table
 #define LAST_MDI_TABLE_IDM IDW_CHILD9
+#define AUTOLOAD true;
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -910,7 +911,8 @@ void VPinball::DoPlay(const bool _cameraMode)
 
 bool VPinball::LoadFile(const bool updateEditor)
 {
-   std::string szFileName = "C:\\Visual Pinball\\Tables\\Bad Cats VPX 1.2.1b.GRHR.vpx";
+   std::string szFileName = m_szMyPath + "Tables\\Bad Cats VPX 1.2.1b.GRHR.vpx";
+   //std::string szFileName = "C:\\Users\\aubte\\Desktop\\Web-Dev\\vpinball\\x64\\Debug\\tables\\Bad Cats VPX 1.2.1b.GRHR.vpx";
    std::cout << "[LAUNCHING] Automatically Launching Bad Cats Table \n"
              << "[LAUNCHING] Path: " << szFileName << std::endl
              << "[LAUNCHING] Edit path at vpinball/vinpall.cpp - search for szFileName" << std::endl;
@@ -1349,11 +1351,17 @@ void VPinball::MainMsgLoop()
                CComObject<PinTable> *const pt = GetActiveTable();
                if (pt)
                   CloseTable(pt);
-               // then select the new one, and if one was selected, play it
-               m_table_played_via_SelectTableOnStart = LoadFile(false);
-               if (m_table_played_via_SelectTableOnStart)
-                  DoPlay(false);
+               // then select the new one, and if one was selected, play it remove this if autoload
             }
+#ifdef AUTOLOAD
+               m_table_played_via_SelectTableOnStart= 
+#endif AUTOLOAD
+               // Box to say if you want to reopen the table 
+              //   m_table_played_via_SelectTableOnStart = LoadFile(false);
+            //   if (m_table_played_via_SelectTableOnStart)
+               //   DoPlay(false);
+
+            
 
             WaitMessage(); // otherwise wait for input
          }
