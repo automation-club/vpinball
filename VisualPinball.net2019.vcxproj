@@ -907,6 +907,7 @@ copy "$(TargetPath)" "%25VPIN_DIR%25"
     <ClInclude Include="rubber.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="slintf.h" />
+    <ClInclude Include="Socket.h" />
     <ClInclude Include="spinner.h" />
     <ClInclude Include="StackTrace.h" />
     <ClInclude Include="stdafx.h" />

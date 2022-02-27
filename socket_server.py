@@ -1,16 +1,28 @@
+import time
+
+from zmq.sugar.socket import Socket
+
 import zmq
 import threading
 import keyboard
 import os
 
-def handle_socket_server(socket):
+# Global Variables
+msg_to_send = ""
+
+
+def handle_socket_server(socket: Socket):
+    global msg_to_send
     while True:
-        #  Wait for next request from qclient
-        message = socket.recv()
+        #  Wait for next request from q client
+        message = socket.recv().decode()
         print(f"[RECEIVED FROM CLIENT]: {message}")
 
         #  Send reply back to client
-        socket.send("".encode())
+        socket.send(msg_to_send.encode())
+        if len(msg_to_send) > 0:
+            pass
+            # msg_to_send = ""
 
 
 def detect_quit_keypress():
@@ -27,6 +39,8 @@ def launch_visual_pinball():
 
 
 def main():
+    global msg_to_send
+
     # Bind TCP socket and listen for clients
     context = zmq.Context()
     socket = context.socket(zmq.REP)
@@ -44,6 +58,14 @@ def main():
     server_thread.start()
     server_shutdown_thread.start()
     launch_vp_thread.start()
+
+    time.sleep(10)
+
+    msg_to_send = "L"
+
+    time.sleep(10)
+
+    msg_to_send = "N"
 
     server_shutdown_thread.join()
     # Run once shutdown key detected

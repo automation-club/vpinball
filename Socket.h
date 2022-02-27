@@ -11,14 +11,14 @@ class Socket
 
 public:
    Socket()
-   {
+   {    
       if (socket.handle() != nullptr) // If we have a connection don't create a new one
       {
          try
          {
             std::cout << "Connecting to " << sockAddr << std::endl; // Make sure the 
             socket.connect(sockAddr);
-            std::cout << "Error " << &zmq::error_t::what << std::endl;
+            // std::cout << "Error " << &zmq::error_t::what << std::endl;
          }
          catch (zmq::error_t &e)
          {
@@ -35,6 +35,21 @@ public:
          socket.send(zmq::buffer(data), zmq::send_flags::none);
          zmq::message_t reply {};
          socket.recv(reply, zmq::recv_flags::none);
+         std::string strReply = std::string(static_cast<char *>(reply.data()), reply.size());
+         if (!strReply.empty())
+         {
+            std::cout << "[RECEIVED FROM SERVER]: " << strReply << std::endl;
+            if (strReply.compare("L") == 0) {
+                g_pplayer->m_ptable->FireKeyEvent(DISPID_GameEvents_KeyDown, g_pplayer->m_rgKeys[eRightFlipperKey]);
+            }
+            else
+            {
+                g_pplayer->m_ptable->FireKeyEvent(DISPID_GameEvents_KeyUp, g_pplayer->m_rgKeys[eRightFlipperKey]);
+            }
+            //dev.dwOfs = m_rgK
+           // test.Init()
+            //Flipper::RotateToEnd();
+         }
       }
       catch (zmq::error_t e)
       {

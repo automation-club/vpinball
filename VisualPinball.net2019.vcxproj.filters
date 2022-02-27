@@ -1481,6 +1481,9 @@
     <ClInclude Include="TextureManager.h">
       <Filter>headers</Filter>
     </ClInclude>
+    <ClInclude Include="Socket.h">
+      <Filter>headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="shader\BallShader.hlsl">
