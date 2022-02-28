@@ -1,3 +1,4 @@
+import random
 import time
 
 from zmq.sugar.socket import Socket
@@ -13,23 +14,34 @@ msg_to_send = ""
 
 def handle_socket_server(socket: Socket):
     global msg_to_send
+    i = 0
     while True:
         #  Wait for next request from q client
         message = socket.recv().decode()
-        print(f"[RECEIVED FROM CLIENT]: {message}")
+        observations = message.split(",")  # Observations: PosX, PosY, PosZ, VelX, VelY, VelZ
+        print(f"[RECEIVED FROM CLIENT]: {observations}")
+
+        # Decide Action
+        action = None
+        if i % 30 == 0:
+            action_space = ["L", "R", "B", "N"]
+            action = random.choice(action_space)
 
         #  Send reply back to client
-        socket.send(msg_to_send.encode())
-        if len(msg_to_send) > 0:
-            pass
-            # msg_to_send = ""
+        # print(f"{action} sent")
+        socket.send(action.encode())
 
 
-def detect_quit_keypress():
+def detect_keypress():
+    global msg_to_send
     while True:
         if keyboard.is_pressed('q'):
             print("Shutdown key detected.")
             break
+        # if keyboard.is_pressed('l'):
+        #     msg_to_send = "L"
+        # if keyboard.is_pressed('r'):
+        #     msg_to_send = "R"
 
 
 def launch_visual_pinball():
@@ -50,7 +62,7 @@ def main():
     # Thread for handling client requests
     server_thread = threading.Thread(target=handle_socket_server, args=(socket,), daemon=True)
     # Thread for handling shutdown (press Q)
-    server_shutdown_thread = threading.Thread(target=detect_quit_keypress, args=())
+    server_shutdown_thread = threading.Thread(target=detect_keypress, args=())
     # Thread for starting Visual Pinball
     launch_vp_thread = threading.Thread(target=launch_visual_pinball, args=())
 
@@ -58,14 +70,6 @@ def main():
     server_thread.start()
     server_shutdown_thread.start()
     launch_vp_thread.start()
-
-    time.sleep(10)
-
-    msg_to_send = "L"
-
-    time.sleep(10)
-
-    msg_to_send = "N"
 
     server_shutdown_thread.join()
     # Run once shutdown key detected

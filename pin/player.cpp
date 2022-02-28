@@ -4914,9 +4914,15 @@ void Player::Render()
    if (m_pactiveball) // Debug Ball Pos
    {
       Vertex3Ds pos = m_pactiveball->m_d.m_pos;
-      Vertex3Ds velo = m_pactiveball->m_d.m_vel;
-      std::string posXYZ = "posX: " + float_to_str(pos.x) + ", " + "posY " + float_to_str(pos.y) + ", " + "pos Z: " + float_to_str(pos.z);
-      std::string veloXYZ = "VeloX: " + float_to_str(velo.x) + ", " + "VeloY " + float_to_str(velo.y) + ", " + "VeloZ: " + float_to_str(velo.z);
+      Vertex3Ds vel = m_pactiveball->m_d.m_vel;
+      std::string posAndVelXYZ = 
+          float_to_str(pos.x) + "," + 
+          float_to_str(pos.y) + "," + 
+          float_to_str(pos.z) + "," +
+          float_to_str(vel.x) + "," + 
+          float_to_str(vel.y) + "," + 
+          float_to_str(vel.z);
+      /*
       DebugPrint(0, 80, "Pos: ", false);
       DebugPrint(0, 100, float_to_str(pos.x).c_str(), false);
       DebugPrint(0, 120, float_to_str(pos.y).c_str(), false);
@@ -4925,9 +4931,10 @@ void Player::Render()
       DebugPrint(0, 180, float_to_str(velo.x).c_str(), false);
       DebugPrint(0, 200, float_to_str(velo.y).c_str(), false);
       DebugPrint(0, 220, float_to_str(velo.z).c_str(), false);
+      */
+      
       // Socket output the data
-      sock->send(posXYZ);
-      sock->send(veloXYZ);
+      sock->send_request(posAndVelXYZ);
    }
    // Physics/Timer updates, done at the last moment, especially to handle key input (VP<->VPM rountrip) and animation triggers
    //if ( !cameraMode )
