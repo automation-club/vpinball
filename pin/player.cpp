@@ -4922,16 +4922,16 @@ void Player::Render()
           float_to_str(vel.x) + "," + 
           float_to_str(vel.y) + "," + 
           float_to_str(vel.z);
-      /*
+#ifdef DEBUG
       DebugPrint(0, 80, "Pos: ", false);
       DebugPrint(0, 100, float_to_str(pos.x).c_str(), false);
       DebugPrint(0, 120, float_to_str(pos.y).c_str(), false);
       DebugPrint(0, 140, float_to_str(pos.z).c_str(), false);
       DebugPrint(0, 160, "Velocity: ", false);
-      DebugPrint(0, 180, float_to_str(velo.x).c_str(), false);
-      DebugPrint(0, 200, float_to_str(velo.y).c_str(), false);
-      DebugPrint(0, 220, float_to_str(velo.z).c_str(), false);
-      */
+      DebugPrint(0, 180, float_to_str(vel.x).c_str(), false);
+      DebugPrint(0, 200, float_to_str(vel.y).c_str(), false);
+      DebugPrint(0, 220, float_to_str(vel.z).c_str(), false);
+#endif // DEBUG
       
       // Socket output the data
       sock->send_request(posAndVelXYZ);
