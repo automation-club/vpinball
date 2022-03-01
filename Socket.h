@@ -40,11 +40,15 @@ public:
          {
             std::cout << "[RECEIVED FROM SERVER]: " << strReply << std::endl;
             if (strReply.compare("L") == 0) {
-                g_pplayer->m_ptable->FireKeyEvent(DISPID_GameEvents_KeyDown, g_pplayer->m_rgKeys[eRightFlipperKey]);
+                g_pplayer->m_ptable->FireKeyEvent(DISPID_GameEvents_KeyDown, g_pplayer->m_rgKeys[eLeftFlipperKey]);
             }
-            else
+            else if (strReply.compare("R") == 0)
             {
-                g_pplayer->m_ptable->FireKeyEvent(DISPID_GameEvents_KeyUp, g_pplayer->m_rgKeys[eRightFlipperKey]);
+               g_pplayer->m_ptable->FireKeyEvent(DISPID_GameEvents_KeyDown, g_pplayer->m_rgKeys[eRightFlipperKey]);
+            }
+            else 
+            {
+               g_pplayer->m_ptable->FireKeyEvent(DISPID_GameEvents_KeyUp, g_pplayer->m_rgKeys[ePlungerKey]);
             }
             //dev.dwOfs = m_rgK
            // test.Init()

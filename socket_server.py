@@ -66,6 +66,10 @@ def main():
     time.sleep(10)
 
     msg_to_send = "N"
+    
+    time.sleep(10)
+    
+    msg_to_send = "R"
 
     server_shutdown_thread.join()
     # Run once shutdown key detected
