@@ -3,12 +3,46 @@ import zmq
 import threading
 import keyboard
 import os
+import torch
+import numpy as np
 
 from pathlib import Path
 from zmq.sugar.socket import Socket
+from torch import nn
+from collections import deque
+
+
+class SimpleDQN(nn.Module):
+    def __init__(self, observation_space, action_space, seed):
+        super().__init__()
+        self.observation_space = observation_space
+        self.action_space = action_space
+        self.set_random_seeds(seed)
+        self.main = self.create_agent()
+        self.target = self.create_agent()
+        self.replay_buffer = deque(maxlen=50000)
+
+    def create_agent(self):
+        return nn.Sequential(
+            nn.Linear(self.observation_space, 64),
+            nn.ReLU(),
+            nn.Linear(64, 128),
+            nn.ReLU(),
+            nn.Linear(128, self.action_space),
+        )
+
+    def set_random_seeds(self, seed):
+        torch.manual_seed(seed)
+        random.seed(seed)
+        np.random.seed(seed)
 
 
 def handle_socket_server(socket: Socket):
+    # DQN Parameters
+    MAX_EPSILON = 1
+    MIN_EPSILON = 0.1
+    DECAY_RATE = 0.01
+
     i = 0
     while True:
         #  Wait for next request from client
@@ -38,7 +72,6 @@ def launch_visual_pinball(path):
 
 
 def main():
-
     # Config
     VISUAL_PINBALL_EXE_PATH = Path("./x64/Debug/VPinballX.exe")
 
