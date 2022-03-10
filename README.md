@@ -5,7 +5,7 @@
 This project was started by Randy Davis, open sourced in 2010 and continued by the Visual Pinball development team. This is the official repository.
 
 ## Automation Club Setup Instructions
-
+lol this doesn't work
 If you are trying to launch the Bad Cats table, you will need the roms file found here: https://www.vpforums.org/index.php?app=downloads&showfile=931
 Install the file and keep it as a compressed .zip file. Move the file to the following directory: C:/VPinball/VPinMame/roms/ (Finding a workaround for this was taking longer than it is worth)
 
