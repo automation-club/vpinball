@@ -38,10 +38,17 @@ class SimpleDQN(nn.Module):
 
 
 def handle_socket_server(socket: Socket):
+    # Observation Space: Pos X, Y, Z & Vel X, Y, Z
+    # Action Space: L Flipper, R Flipper, Both Flippers, No Flippers
+    dqn = SimpleDQN(observation_space=6, action_space=4, seed=1)
+
     # DQN Parameters
     MAX_EPSILON = 1
     MIN_EPSILON = 0.1
     DECAY_RATE = 0.01
+
+    # if np.random.rand() < epsilon
+
 
     i = 0
     while True:
@@ -86,7 +93,7 @@ def main():
     # Thread for handling shutdown (press Q)
     server_shutdown_thread = threading.Thread(target=detect_keypress, args=())
     # Thread for starting Visual Pinball
-    launch_vp_thread = threading.Thread(target=launch_visual_pinball, args=(VISUAL_PINBALL_EXE_PATH,))
+    launch_vp_thread = threading.Thread(target=launch_visual_pinball, args=(str(VISUAL_PINBALL_EXE_PATH),))
 
     # Start Threads
     server_thread.start()
