@@ -2876,6 +2876,7 @@ void Player::PhysicsSimulateCycle(float dtime) // move physics forward to this t
       {
          Ball * const pball = m_vball[i];
 
+
          if (
 #ifdef C_DYNAMIC
              pball->m_dynamic > 0 &&
