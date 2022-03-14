@@ -10,8 +10,9 @@ This project was started by Randy Davis, open sourced in 2010 and continued by t
 3) Navigate to the VPinMAME folder you just extracted amd launch Setup64.exe. Follow the default installation.
 4) Download the [Bad Cats Table](https://drive.google.com/file/d/14720LJ2FxGfDSd7bel5x97ney5mURGKs/view?usp=sharing) and extract it to vpinball/x64/Debug/Tables.
 5) Download the [Bad Cats ROM](https://drive.google.com/file/d/18Aouh4Xikq9UkjnP9975L49STgszuUSm/view?usp=sharing) and move it to vpinball/VPinMAME/roms/ (you might have to create a roms/ directory within VPinMAME). **DO NOT DECOMPRESS THE ROMS FILE**
-6) Compile the code, run the socket_server.py scrip which will automatically launch the table, and you should have a working Visual Pinball Bad Cats Table interfacing with Python. 
-If you are trying to launch the Bad Cats table, you will need the roms file found here: https://www.vpforums.org/index.php?app=downloads&showfile=931
+6) If you don't have DirectX, install it from [here](https://www.microsoft.com/en-us/download/details.aspx?id=35)
+7) Compile the code, run the socket_server.py scrip which will automatically launch the table, and you should have a working Visual Pinball Bad Cats Table interfacing with Python. 
+
 
 
 ## Features
