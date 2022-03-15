@@ -300,6 +300,8 @@ public:
             run = false;
             break;
          }
+       
+
          if (lstrcmpi(szArglist[i], _T("-RegServer")) == 0 || lstrcmpi(szArglist[i], _T("/RegServer")) == 0)
          {
             _Module.UpdateRegistryFromResource(IDR_VPINBALL, TRUE);
@@ -316,6 +318,11 @@ public:
          {
              m_vpinball.m_disEnableTrueFullscreen = 0;
              continue;
+         }
+
+           if (lstrcmpi(szArglist[i], _T("-EnableSockets")) == 0 || lstrcmpi(szArglist[i], _T("/EnableSockets")) == 0) {
+            // Enable Sockets bool
+            continue;
          }
          if (lstrcmpi(szArglist[i], _T("-EnableTrueFullscreen")) == 0 || lstrcmpi(szArglist[i], _T("/EnableTrueFullscreen")) == 0)
          {
