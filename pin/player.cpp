@@ -1,5 +1,5 @@
 #include "stdafx.h"
-
+#include "sock.h"
 //#define USE_IMGUI
 #ifdef USE_IMGUI
  #include "imgui/imgui.h"
@@ -67,6 +67,7 @@ public:
 #endif
 
 
+
 #include <algorithm>
 #include <time.h>
 #include "../meshes/ballMesh.h"
@@ -78,6 +79,7 @@ public:
 #include "../math/bluenoise.h"
 #include "../inc/winsdk/legacy_touch.h"
 #include <Socket.h>
+#define socks m_bSock; // Socket Lanuch Arg
 
 
 constexpr RECT touchregion[8] = { //left,top,right,bottom (in % of screen)
@@ -4863,7 +4865,6 @@ std::string float_to_str(float f)
 }
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
 void Player::Render()
 {
    U64 timeforframe = usec();
@@ -4884,6 +4885,8 @@ void Player::Render()
       Sleep(m_sleeptime - 1);
    
    m_pininput.ProcessKeys(/*sim_msec,*/ -(int)(timeforframe / 1000)); // trigger key events mainly for VPM<->VP rountrip
+
+
 
 #ifdef DEBUGPHYSICS
    c_hitcnts = 0;
@@ -4916,13 +4919,8 @@ void Player::Render()
    {
       Vertex3Ds pos = m_pactiveball->m_d.m_pos;
       Vertex3Ds vel = m_pactiveball->m_d.m_vel;
-      std::string posAndVelXYZ = 
-          float_to_str(pos.x) + "," + 
-          float_to_str(pos.y) + "," + 
-          float_to_str(pos.z) + "," +
-          float_to_str(vel.x) + "," + 
-          float_to_str(vel.y) + "," + 
-          float_to_str(vel.z);
+      std::string posAndVelXYZ
+         = float_to_str(pos.x) + "," + float_to_str(pos.y) + "," + float_to_str(pos.z) + "," + float_to_str(vel.x) + "," + float_to_str(vel.y) + "," + float_to_str(vel.z);
 #ifdef DEBUG
       DebugPrint(0, 80, "Pos: ", false);
       DebugPrint(0, 100, float_to_str(pos.x).c_str(), false);
@@ -4933,10 +4931,17 @@ void Player::Render()
       DebugPrint(0, 200, float_to_str(vel.y).c_str(), false);
       DebugPrint(0, 220, float_to_str(vel.z).c_str(), false);
 #endif // DEBUG
-      
-      // Socket output the data
+
+      // If we have the bool set, we want to enable socket communication
+#ifdef socks
       sock->send_request(posAndVelXYZ);
+#endif // socks
+
+        
+      
    }
+
+
    // Physics/Timer updates, done at the last moment, especially to handle key input (VP<->VPM rountrip) and animation triggers
    //if ( !cameraMode )
    if (m_minphyslooptime == 0) // (vsync) latency reduction code not active? -> Do Physics Updates here

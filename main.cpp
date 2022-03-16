@@ -2,6 +2,7 @@
 
 #include "StdAfx.h"
 
+#include <iostream>
 #ifdef CRASH_HANDLER
 #include "StackTrace.h"
 #include "CrashHandler.h"
@@ -12,7 +13,7 @@
 #include <initguid.h>
 
 #define  SET_CRT_DEBUG_FIELD(a)   _CrtSetDbgFlag((a) | _CrtSetDbgFlag(_CRTDBG_REPORT_FLAG))
-
+#include "sock.h"
 #include "vpinball_i.c"
 
 #ifdef CRASH_HANDLER
@@ -322,8 +323,12 @@ public:
 
            if (lstrcmpi(szArglist[i], _T("-EnableSockets")) == 0 || lstrcmpi(szArglist[i], _T("/EnableSockets")) == 0) {
             // Enable Sockets bool
+              
+            std::cout << "Sockets Enabled" << std::endl;
+            m_bSock = 1;
             continue;
          }
+
          if (lstrcmpi(szArglist[i], _T("-EnableTrueFullscreen")) == 0 || lstrcmpi(szArglist[i], _T("/EnableTrueFullscreen")) == 0)
          {
              m_vpinball.m_disEnableTrueFullscreen = 1;
