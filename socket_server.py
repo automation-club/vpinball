@@ -80,7 +80,7 @@ def launch_visual_pinball(path):
 
 def main():
     # Config
-    VISUAL_PINBALL_EXE_PATH = Path("./x64/Debug/VPinballX.exe")
+    VISUAL_PINBALL_EXE_PATH = Path("./x64/Debug/VPinballX.exe -EnableSockets")
 
     # Bind TCP socket and listen for clients
     context = zmq.Context()
@@ -93,6 +93,8 @@ def main():
     # Thread for handling shutdown (press Q)
     server_shutdown_thread = threading.Thread(target=detect_keypress, args=())
     # Thread for starting Visual Pinball
+    # Pass in lanuch args to VPinball
+    
     launch_vp_thread = threading.Thread(target=launch_visual_pinball, args=(str(VISUAL_PINBALL_EXE_PATH),))
 
     # Start Threads
@@ -103,7 +105,7 @@ def main():
     # Run once shutdown key detected
     server_shutdown_thread.join()
     print("Ending program.")
-
+    exit(0)
     # Socket close handled by garbage collector
 
 
