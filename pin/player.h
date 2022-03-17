@@ -296,6 +296,7 @@ private:
 
 public:
    void LockForegroundWindow(const bool enable);
+   void SendRequestToPython(const string payload);
    void Render();
    void RenderDynamics();
 

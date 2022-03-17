@@ -4864,6 +4864,11 @@ std::string float_to_str(float f)
    return stream.str();
 }
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+void Player::SendRequestToPython(string payload) {
+#ifdef socks
+      sock->send_request(payload);
+#endif
+}
 
 void Player::Render()
 {
@@ -4933,10 +4938,8 @@ void Player::Render()
 #endif // DEBUG
 
       // If we have the bool set, we want to enable socket communication
-#ifdef socks
-      sock->send_request(posAndVelXYZ);
-#endif // socks
 
+      Player::SendRequestToPython(posAndVelXYZ);
         
       
    }
