@@ -11,6 +11,7 @@
 #include "Shader.h"
 #include "IndexBuffer.h"
 #include "VertexBuffer.h"
+#include <iostream>
 
 Kicker::Kicker()
 {
@@ -686,6 +687,9 @@ STDMETHODIMP Kicker::InterfaceSupportsErrorInfo(REFIID riid)
 
 STDMETHODIMP Kicker::CreateSizedBallWithMass(/*[in]*/float radius, /*[in]*/float mass, /*out, retval]*/ IBall **pBallEx)
 {
+//ARHAN
+   std::cout << "PPLEASE1 \n \n \n \n \n \n";
+
    if (m_phitkickercircle)
    {
       const float height = m_ptable->GetSurfaceHeight(m_d.m_szSurface, m_d.m_vCenter.x, m_d.m_vCenter.y);
@@ -706,6 +710,9 @@ STDMETHODIMP Kicker::CreateSizedBallWithMass(/*[in]*/float radius, /*[in]*/float
 
 STDMETHODIMP Kicker::CreateSizedBall(/*[in]*/float radius, /*out, retval]*/ IBall **pBallEx)
 {
+    //ARHAN
+   std::cout << "PPLEASE2 \n \n \n \n \n \n";
+
    if (m_phitkickercircle)
    {
       const float height = m_ptable->GetSurfaceHeight(m_d.m_szSurface, m_d.m_vCenter.x, m_d.m_vCenter.y);
@@ -726,6 +733,8 @@ STDMETHODIMP Kicker::CreateSizedBall(/*[in]*/float radius, /*out, retval]*/ IBal
 
 STDMETHODIMP Kicker::CreateBall(IBall **pBallEx)
 {
+    //ARHAN
+   std::cout << "PPLEASE3 \n \n \n \n \n \n";
    if (m_phitkickercircle)
    {
       const float height = m_ptable->GetSurfaceHeight(m_d.m_szSurface, m_d.m_vCenter.x, m_d.m_vCenter.y);
@@ -746,6 +755,9 @@ STDMETHODIMP Kicker::CreateBall(IBall **pBallEx)
 
 STDMETHODIMP Kicker::DestroyBall(int *pVal)
 {
+    //ARHAN
+   std::cout << "PPLEASE \n \n \n \n \n \n";
+
    int cnt = 0;
 
    if (m_phitkickercircle && m_phitkickercircle->m_pball)

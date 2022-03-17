@@ -3,6 +3,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudio,c++,python,pycharm
 
 # Project Specific
+VPinMAME/
 shader/
 x64/
 
