@@ -36,6 +36,11 @@ class SimpleDQN(nn.Module):
         random.seed(seed)
         np.random.seed(seed)
 
+def fire_plunger(socket):
+    socket.send("P".encode())
+    for i in range(240):
+        socket.recv()
+        socket.send("".encode())
 
 def handle_socket_server(socket: Socket):
     # Observation Space: Pos X, Y, Z & Vel X, Y, Z
@@ -49,22 +54,27 @@ def handle_socket_server(socket: Socket):
 
     # if np.random.rand() < epsilon
 
-
     i = 0
     while True:
+        i+=1
         #  Wait for next request from client
         message = socket.recv().decode()
-        observations = message.split(",")  # Observations: PosX, PosY, PosZ, VelX, VelY, VelZ
-        print(f"[RECEIVED FROM CLIENT]: {observations}")
+        client_request = message.split(",")  # Observations: PosX, PosY, PosZ, VelX, VelY, VelZ
+        print(f"[RECEIVED FROM CLIENT]: {client_request} {i}")
 
-        # Decide Action
-        action = None
-        if i % 30 == 0:
-            action_space = ["L", "R", "B", "N"]
-            action = random.choice(action_space)
+        if client_request[0] == "BALL CREATED":
+            fire_plunger(socket)
+        elif client_request[0] == "BALL DESTROYED":
+            socket.send("G".encode()) #  Start new game
+        elif client_request[0] == "BALL POS":
+            # Decide Action
+            action = "N"
+            # if i % 30 == 0:
+            #     action_space = ["L", "R", "B", "N", "P"]
+            #     action = random.choice(action_space)
 
-        # Send reply back to client
-        socket.send(action.encode())
+            # Send reply back to client
+            socket.send(action.encode())
 
 
 def detect_keypress():
