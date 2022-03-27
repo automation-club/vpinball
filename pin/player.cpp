@@ -4942,6 +4942,7 @@ void Player::Render()
 
       g_pplayer->SendRequestToPython(posAndVelXYZ);
    }
+   // this other stuff will only run if there is no active ball
    else if (g_pplayer->coinRuns <= 120 && g_pplayer->coinRuns % 120 == 0) 
    {
       std::cout << "Doing this thing \n";
