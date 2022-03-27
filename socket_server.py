@@ -42,6 +42,13 @@ def fire_plunger(socket):
         socket.recv()
         socket.send("".encode())
 
+    socket.recv()
+    socket.send("N".encode())
+    for i in range(120):
+        socket.recv()
+        socket.send("".encode())
+
+
 def handle_socket_server(socket: Socket):
     # Observation Space: Pos X, Y, Z & Vel X, Y, Z
     # Action Space: L Flipper, R Flipper, Both Flippers, No Flippers
@@ -66,6 +73,8 @@ def handle_socket_server(socket: Socket):
             fire_plunger(socket)
         elif client_request[0] == "BALL DESTROYED":
             socket.send("G".encode()) #  Start new game
+        elif client_request[0] == "NOTHING":
+            socket.send("G".encode())
         elif client_request[0] == "BALL POS":
             # Decide Action
             action = "N"

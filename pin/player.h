@@ -297,6 +297,7 @@ private:
 public:
    void LockForegroundWindow(const bool enable);
    void SendRequestToPython(const string payload);
+   int coinRuns = 0;
    void Render();
    void RenderDynamics();
 

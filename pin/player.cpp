@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "sock.h"
+#include <Windows.h>
 //#define USE_IMGUI
 #ifdef USE_IMGUI
  #include "imgui/imgui.h"
@@ -4925,8 +4926,7 @@ void Player::Render()
       Vertex3Ds pos = m_pactiveball->m_d.m_pos;
       Vertex3Ds vel = m_pactiveball->m_d.m_vel;
       std::string posAndVelXYZ
-         = "BALL POS," + float_to_str(pos.x) + "," + float_to_str(pos.y) + "," + float_to_str(pos.z) + "," +
-          float_to_str(vel.x) + "," + float_to_str(vel.y) + "," + float_to_str(vel.z);
+         = "BALL POS," + float_to_str(pos.x) + "," + float_to_str(pos.y) + "," + float_to_str(pos.z) + "," + float_to_str(vel.x) + "," + float_to_str(vel.y) + "," + float_to_str(vel.z);
 #ifdef DEBUG
       DebugPrint(0, 80, "Pos: ", false);
       DebugPrint(0, 100, float_to_str(pos.x).c_str(), false);
@@ -4940,9 +4940,28 @@ void Player::Render()
 
       // If we have the bool set, we want to enable socket communication
 
-      Player::SendRequestToPython(posAndVelXYZ);
-        
-      
+      g_pplayer->SendRequestToPython(posAndVelXYZ);
+   }
+   else if (g_pplayer->coinRuns <= 120 && g_pplayer->coinRuns % 120 == 0) 
+   {
+      std::cout << "Doing this thing \n";
+	   g_pplayer->m_ptable->
+		   FireKeyEvent(DISPID_GameEvents_KeyDown, g_pplayer->m_rgKeys[eAddCreditKey]);
+	   g_pplayer->m_ptable->
+		   FireKeyEvent(DISPID_GameEvents_KeyUp, g_pplayer->m_rgKeys[eAddCreditKey]);
+      g_pplayer->coinRuns++;
+      //Sleep(2000);
+      // g_pplayer->SendRequestToPython("NOTHING");
+   }
+   else if (g_pplayer->coinRuns == 240) {
+      std::cout << "starting gaming thing \n";
+      g_pplayer->m_ptable->FireKeyEvent(DISPID_GameEvents_KeyDown, g_pplayer->m_rgKeys[eStartGameKey]);
+      g_pplayer->m_ptable->FireKeyEvent(DISPID_GameEvents_KeyUp, g_pplayer->m_rgKeys[eStartGameKey]);
+      //Sleep(2000);
+   }
+   else {
+      std::cout << "No Ball In Play \n";
+      g_pplayer->coinRuns++;
    }
 
 

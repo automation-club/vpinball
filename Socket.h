@@ -140,7 +140,6 @@ private:
                    FireKeyEvent(DISPID_GameEvents_KeyUp, g_pplayer->m_rgKeys[eStartGameKey]);
                break;
 
-
        }     
     }
 };
