@@ -4942,28 +4942,11 @@ void Player::Render()
 
       g_pplayer->SendRequestToPython(posAndVelXYZ);
    }
-   // this other stuff will only run if there is no active ball
-   else if (g_pplayer->coinRuns <= 120 && g_pplayer->coinRuns % 120 == 0) 
+   else
    {
-      std::cout << "Doing this thing \n";
-	   g_pplayer->m_ptable->
-		   FireKeyEvent(DISPID_GameEvents_KeyDown, g_pplayer->m_rgKeys[eAddCreditKey]);
-	   g_pplayer->m_ptable->
-		   FireKeyEvent(DISPID_GameEvents_KeyUp, g_pplayer->m_rgKeys[eAddCreditKey]);
-      g_pplayer->coinRuns++;
-      //Sleep(2000);
-      // g_pplayer->SendRequestToPython("NOTHING");
+      g_pplayer->SendRequestToPython("NOTHING");
    }
-   else if (g_pplayer->coinRuns == 240) {
-      std::cout << "starting gaming thing \n";
-      g_pplayer->m_ptable->FireKeyEvent(DISPID_GameEvents_KeyDown, g_pplayer->m_rgKeys[eStartGameKey]);
-      g_pplayer->m_ptable->FireKeyEvent(DISPID_GameEvents_KeyUp, g_pplayer->m_rgKeys[eStartGameKey]);
-      //Sleep(2000);
-   }
-   else {
-      std::cout << "No Ball In Play \n";
-      g_pplayer->coinRuns++;
-   }
+   
 
 
    // Physics/Timer updates, done at the last moment, especially to handle key input (VP<->VPM rountrip) and animation triggers

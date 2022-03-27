@@ -38,15 +38,49 @@ class SimpleDQN(nn.Module):
 
 def fire_plunger(socket):
     socket.send("P".encode())
-    for i in range(240):
+    for i in range(120):
         socket.recv()
         socket.send("".encode())
 
     socket.recv()
     socket.send("N".encode())
-    for i in range(120):
+    for i in range(60):
         socket.recv()
         socket.send("".encode())
+
+# dont worry about how this works or what it does
+# just trust that it works (until someone finds the fucking game end call)
+def start_new_game(socket):
+    socket.send("C".encode())
+    for i in range(90):
+        socket.recv()
+        socket.send("".encode())
+    socket.recv()
+    socket.send("C".encode())
+    for i in range(200):
+        message = socket.recv().decode()
+        socket.send(f"{i}".encode())
+        if message == "BALL CREATED":
+            socket.recv()
+            fire_plunger(socket)
+            return
+    message = socket.recv().decode()
+    if message == "BALL CREATED":
+        fire_plunger(socket)
+        return
+    socket.send("s".encode())
+    message = socket.recv().decode()
+    if message == "BALL CREATED":
+        fire_plunger(socket)
+        return
+    socket.send("S".encode())
+    while True:
+        message = socket.recv().decode()
+        socket.send("".encode())
+        if message == "BALL CREATED":
+            socket.recv()
+            fire_plunger(socket)
+            break
 
 
 def handle_socket_server(socket: Socket):
@@ -61,20 +95,21 @@ def handle_socket_server(socket: Socket):
 
     # if np.random.rand() < epsilon
 
-    i = 0
     while True:
-        i+=1
         #  Wait for next request from client
         message = socket.recv().decode()
         client_request = message.split(",")  # Observations: PosX, PosY, PosZ, VelX, VelY, VelZ
-        print(f"[RECEIVED FROM CLIENT]: {client_request} {i}")
+        print(f"[RECEIVED FROM CLIENT]: {client_request}")
 
         if client_request[0] == "BALL CREATED":
             fire_plunger(socket)
+
         elif client_request[0] == "BALL DESTROYED":
-            socket.send("G".encode()) #  Start new game
+            socket.send("".encode())
+
         elif client_request[0] == "NOTHING":
-            socket.send("G".encode())
+            start_new_game(socket)  # Start new game
+
         elif client_request[0] == "BALL POS":
             # Decide Action
             action = "N"
