@@ -7,10 +7,6 @@
 #include "../pin/player.h"
 
 
-#if logging
-    // change file name to whatever you want, files will be saved to the runs/ folder
-    #define gameLogFilePath "..\\..\\..\\runs\\test1.txt"
-#endif
 
 //#define USE_IMGUI
 #ifdef USE_IMGUI

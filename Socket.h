@@ -46,14 +46,16 @@ public:
          // Act on response
          Socket::process_agent_input(strReply);
 
+//#ifdef logging
+//         // BALL POS, x, y, z, velx, vely, velz, action
+//		 g_pplayer->gameLogFile << data << "," << strReply;
+//#endif
+
       }
       catch (zmq::error_t e)
       {
          std::cout << "Error Sending Data " << e.what() << std::endl;
       }
-#ifdef logging
-      g_pplayer->gameLogFile << data << "," << strReply;
-#endif
    };
    void cleanup()
    {

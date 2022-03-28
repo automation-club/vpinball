@@ -10,7 +10,12 @@
 #define DEFAULT_PLAYER_FS_WIDTH 1920
 #define DEFAULT_PLAYER_FS_REFRESHRATE 60
 
-#define logging false
+#define logging true
+
+#if logging
+    // change file name to whatever you want, files will be saved to the runs/ folder
+    #define gameLogFilePath "..\\..\\..\\runs\\experience-learning.txt"
+#endif
 
 constexpr int DBG_SPRITE_SIZE = 1024;
 
