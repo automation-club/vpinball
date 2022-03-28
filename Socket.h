@@ -32,6 +32,7 @@ public:
    {
       try
       {
+
          // Send data to socket
          socket.send(zmq::buffer(data), zmq::send_flags::none);
 
@@ -50,7 +51,9 @@ public:
       {
          std::cout << "Error Sending Data " << e.what() << std::endl;
       }
-        
+#ifdef logging
+      g_pplayer->gameLogFile << data << "," << strReply;
+#endif
    };
    void cleanup()
    {

@@ -10,6 +10,8 @@
 #define DEFAULT_PLAYER_FS_WIDTH 1920
 #define DEFAULT_PLAYER_FS_REFRESHRATE 60
 
+#define logging false
+
 constexpr int DBG_SPRITE_SIZE = 1024;
 
 // NOTE that the following four definitions need to be in sync in their order!

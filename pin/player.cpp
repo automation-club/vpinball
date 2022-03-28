@@ -4,8 +4,8 @@
 #include <fstream>
 #include <filesystem>
 #include <iostream>
+#include "../pin/player.h"
 
-#define logging false
 
 #if logging
     // change file name to whatever you want, files will be saved to the runs/ folder
