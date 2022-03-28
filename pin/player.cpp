@@ -1,6 +1,17 @@
 #include "stdafx.h"
 #include "sock.h"
 #include <Windows.h>
+#include <fstream>
+#include <filesystem>
+#include <iostream>
+
+#define logging false
+
+#if logging
+    // change file name to whatever you want, files will be saved to the runs/ folder
+    #define gameLogFilePath "..\\..\\..\\runs\\test1.txt"
+#endif
+
 //#define USE_IMGUI
 #ifdef USE_IMGUI
  #include "imgui/imgui.h"
@@ -121,6 +132,14 @@ INT_PTR CALLBACK PauseProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam
 
 Player::Player(const bool cameraMode, PinTable * const ptable) : m_cameraMode(cameraMode)
 {
+
+    std::cout << std::filesystem::current_path() << "\n";
+
+#if logging
+   gameLogFile.open(gameLogFilePath, std::fstream::app);
+   std::cout << "opened";
+#endif
+
 #if defined(_M_ARM64)
 #pragma message ( "Warning: No CPU float ignore denorm implemented" )
 #else
@@ -4869,10 +4888,14 @@ void Player::SendRequestToPython(string payload) {
 #ifdef socks
       sock->send_request(payload);
 #endif
+#if logging
+      g_pplayer->gameLogFile << payload << "\n";
+#endif
 }
 
 void Player::Render()
 {
+
    U64 timeforframe = usec();
 
    m_pininput.ProcessKeys(/*sim_msec,*/ -(int)(timeforframe / 1000)); // trigger key events mainly for VPM<->VP rountrip
@@ -4941,6 +4964,7 @@ void Player::Render()
       // If we have the bool set, we want to enable socket communication
 
       g_pplayer->SendRequestToPython(posAndVelXYZ);
+      
    }
    else
    {
