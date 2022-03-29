@@ -3,7 +3,7 @@
 *An open source pinball table editor and simulator.*
 
 This project was started by Randy Davis, open sourced in 2010 and continued by the Visual Pinball development team. This is the official repository.
-
+This is the LAHS Automation Club fork
 ## Automation Club Setup Instructions
 1) Clone this repository and set it up to work with your IDE of choice. I reccomend using Visual Studio 2022, as that is what it's configured for.
 2) Click [this link](https://github.com/vpinball/pinmame/releases/download/v3.4-336-cb9701e/Main.Download.-.VPinMAME34_Minimal.zip) to download the compressed folder for VPinMAME. Extract the folder, rename it to VPinMAME, and put it in your vpinball/ directory.
