@@ -73,9 +73,21 @@ private:
     
     void process_agent_input(std::string agent_request) 
     {
-       switch (agent_request[0])
+       /* 
+       Character Key:
+
+       L = Left Flipper
+       R = Right Flipper
+       B = Both Flippers
+       N = No Action
+       P = Pull Plunger
+       C = Insert Coin
+       s = Start Game Key Down
+       S = Start Game Key Up
+
+       */
+       switch (agent_request[0]) 
        {
-            // Fire left flipper and turn off right flipper
             case 'L':
                 g_pplayer->m_ptable->
                     FireKeyEvent(DISPID_GameEvents_KeyDown, g_pplayer->m_rgKeys[eLeftFlipperKey]);
@@ -86,7 +98,6 @@ private:
 
                 break;
 
-            // Fire right flipper and turn off left flipper
             case 'R':
                 g_pplayer-> m_ptable->
                     FireKeyEvent(DISPID_GameEvents_KeyDown, g_pplayer->m_rgKeys[eRightFlipperKey]);
@@ -96,7 +107,6 @@ private:
                    FireKeyEvent(DISPID_GameEvents_KeyUp, g_pplayer->m_rgKeys[ePlungerKey]);
                 break;
 
-            // Activate both flippers
             case 'B':
                g_pplayer->m_ptable->
                     FireKeyEvent(DISPID_GameEvents_KeyDown, g_pplayer->m_rgKeys[eLeftFlipperKey]);
@@ -106,7 +116,6 @@ private:
                    FireKeyEvent(DISPID_GameEvents_KeyUp, g_pplayer->m_rgKeys[ePlungerKey]);
                 break;
 
-            // Both flippers off
             case 'N':
 			   g_pplayer->m_ptable->
                    FireKeyEvent(DISPID_GameEvents_KeyUp, g_pplayer->m_rgKeys[eRightFlipperKey]);
@@ -125,21 +134,21 @@ private:
                    FireKeyEvent(DISPID_GameEvents_KeyUp, g_pplayer->m_rgKeys[eLeftFlipperKey]);
                break;
 
-            case 'G':
+            case 'C':
                g_pplayer->m_ptable->
                    FireKeyEvent(DISPID_GameEvents_KeyDown, g_pplayer->m_rgKeys[eAddCreditKey]);
                g_pplayer->m_ptable->
                    FireKeyEvent(DISPID_GameEvents_KeyUp, g_pplayer->m_rgKeys[eAddCreditKey]);
-               g_pplayer->m_ptable->
-                   FireKeyEvent(DISPID_GameEvents_KeyDown, g_pplayer->m_rgKeys[eAddCreditKey]);
-               g_pplayer->m_ptable->
-                   FireKeyEvent(DISPID_GameEvents_KeyUp, g_pplayer->m_rgKeys[eAddCreditKey]);
-               g_pplayer->m_ptable->
-                   FireKeyEvent(DISPID_GameEvents_KeyDown, g_pplayer->m_rgKeys[eStartGameKey]);
-               g_pplayer->m_ptable->
-                   FireKeyEvent(DISPID_GameEvents_KeyUp, g_pplayer->m_rgKeys[eStartGameKey]);
                break;
 
+            case 's':
+               g_pplayer->m_ptable->
+                   FireKeyEvent(DISPID_GameEvents_KeyDown, g_pplayer->m_rgKeys[eStartGameKey]);
+               break;
+
+            case 'S':
+               g_pplayer->m_ptable->FireKeyEvent(DISPID_GameEvents_KeyUp, g_pplayer->m_rgKeys[eStartGameKey]);
+               break;
 
        }     
     }

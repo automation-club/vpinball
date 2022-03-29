@@ -1,5 +1,7 @@
 #pragma once
 
+#include <fstream>
+#include <iostream>
 #include "kdtree.h"
 #include "quadtree.h"
 #include "Debugger.h"
@@ -297,6 +299,7 @@ private:
 public:
    void LockForegroundWindow(const bool enable);
    void SendRequestToPython(const string payload);
+   std::ofstream gameLogFile;
    void Render();
    void RenderDynamics();
 

@@ -1,5 +1,17 @@
 #include "stdafx.h"
 #include "sock.h"
+#include <Windows.h>
+#include <fstream>
+#include <filesystem>
+#include <iostream>
+
+#define logging false
+
+#if logging
+    // change file name to whatever you want, files will be saved to the runs/ folder
+    #define gameLogFilePath "..\\..\\..\\runs\\test1.txt"
+#endif
+
 //#define USE_IMGUI
 #ifdef USE_IMGUI
  #include "imgui/imgui.h"
@@ -120,6 +132,14 @@ INT_PTR CALLBACK PauseProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam
 
 Player::Player(const bool cameraMode, PinTable * const ptable) : m_cameraMode(cameraMode)
 {
+
+    std::cout << std::filesystem::current_path() << "\n";
+
+#if logging
+   gameLogFile.open(gameLogFilePath, std::fstream::app);
+   std::cout << "opened";
+#endif
+
 #if defined(_M_ARM64)
 #pragma message ( "Warning: No CPU float ignore denorm implemented" )
 #else
@@ -4868,10 +4888,14 @@ void Player::SendRequestToPython(string payload) {
 #ifdef socks
       sock->send_request(payload);
 #endif
+#if logging
+      g_pplayer->gameLogFile << payload << "\n";
+#endif
 }
 
 void Player::Render()
 {
+
    U64 timeforframe = usec();
 
    m_pininput.ProcessKeys(/*sim_msec,*/ -(int)(timeforframe / 1000)); // trigger key events mainly for VPM<->VP rountrip
@@ -4925,8 +4949,7 @@ void Player::Render()
       Vertex3Ds pos = m_pactiveball->m_d.m_pos;
       Vertex3Ds vel = m_pactiveball->m_d.m_vel;
       std::string posAndVelXYZ
-         = "BALL POS," + float_to_str(pos.x) + "," + float_to_str(pos.y) + "," + float_to_str(pos.z) + "," +
-          float_to_str(vel.x) + "," + float_to_str(vel.y) + "," + float_to_str(vel.z);
+         = "BALL POS," + float_to_str(pos.x) + "," + float_to_str(pos.y) + "," + float_to_str(pos.z) + "," + float_to_str(vel.x) + "," + float_to_str(vel.y) + "," + float_to_str(vel.z);
 #ifdef DEBUG
       DebugPrint(0, 80, "Pos: ", false);
       DebugPrint(0, 100, float_to_str(pos.x).c_str(), false);
@@ -4940,10 +4963,14 @@ void Player::Render()
 
       // If we have the bool set, we want to enable socket communication
 
-      Player::SendRequestToPython(posAndVelXYZ);
-        
+      g_pplayer->SendRequestToPython(posAndVelXYZ);
       
    }
+   else
+   {
+      g_pplayer->SendRequestToPython("NOTHING");
+   }
+   
 
 
    // Physics/Timer updates, done at the last moment, especially to handle key input (VP<->VPM rountrip) and animation triggers
