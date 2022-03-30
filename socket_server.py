@@ -93,9 +93,9 @@ def parse_file(file):
     return df
 
 class text_dataset(Dataset):
-    def __init__(self, bs):
-        self.path = path
-        self.data = parse_file(path)
+    def __init__(self, observations, labels):
+        self.observations = observations
+        self.labels =  
 
     def __len__(self):
         return len(self.data)
