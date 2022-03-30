@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\CMakeFiles\3a2ca281d7415750368ff420abfb1f9c\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{4E7A1F3D-311F-391B-B4FA-C36413C60BD4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
