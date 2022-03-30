@@ -523,6 +523,7 @@ add_executable(vpinball WIN32
 target_include_directories(vpinball PUBLIC
    $ENV{DXSDK_DIR}/Include
    dialogs
+   include
    shader
    inc
    inc/win32xx/include
