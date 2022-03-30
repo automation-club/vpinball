@@ -5,11 +5,13 @@ import keyboard
 import os
 import torch
 import numpy as np
+import pandas as pd
 
 from pathlib import Path
 from zmq.sugar.socket import Socket
 from torch import nn
 from collections import deque
+from torch.utils.data import Dataset
 
 
 class SimpleDQN(nn.Module):
@@ -81,6 +83,25 @@ def start_new_game(socket):
             socket.recv()
             fire_plunger(socket)
             break
+
+
+# Parse the fucking file
+def parse_file(file):
+    columns = ["_", "X", "Y", "Z", "VelX", "VelY", "VelZ", "Action"]
+    df = pd.read_table("./runs/experience-learning.txt", sep=",",columns=columns) 
+    df.drop(columns=["_"], inplace=True)
+    return df
+
+class text_dataset(Dataset):
+    def __init__(self, bs):
+        self.path = path
+        self.data = parse_file(path)
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        return self.data.iloc[idx] 
 
 
 def handle_socket_server(socket: Socket):
