@@ -10,7 +10,7 @@ set(VERSION_REV "${CMAKE_MATCH_1}")
 
 project(vpinball VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_REV}")
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 99)
 
 add_compile_options(
@@ -86,6 +86,7 @@ add_executable(vpinball WIN32
    Debugger.cpp
    Debugger.h
    dialogs/AboutDialog.cpp
+   include/zmq.hpp
    dialogs/AboutDialog.h
    dialogs/AudioOptionsDialog.cpp
    dialogs/AudioOptionsDialog.h
