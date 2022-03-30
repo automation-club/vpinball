@@ -112,7 +112,7 @@ def handle_socket_server(socket: Socket):
 
         elif client_request[0] == "BALL POS":
             # Decide Action
-            action = "N"
+            action = ""
             # if i % 30 == 0:
             #     action_space = ["L", "R", "B", "N", "P"]
             #     action = random.choice(action_space)

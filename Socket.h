@@ -41,7 +41,7 @@ public:
          socket.recv(reply, zmq::recv_flags::none);
          char replyCode = (char)reply.data();
          std::string strReply = std::string(static_cast<char *>(reply.data()), reply.size());
-         std::cout << "[RECEIVED FROM SERVER]: " << strReply << std::endl;
+         //std::cout << "[RECEIVED FROM SERVER]: " << strReply << std::endl;
          
          // Act on response
          Socket::process_agent_input(strReply);

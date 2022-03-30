@@ -307,6 +307,7 @@ public:
    void LockForegroundWindow(const bool enable);
    void SendRequestToPython(const string payload);
    std::ofstream gameLogFile;
+   char current_action = 'N';
    void Render();
    void RenderDynamics();
 

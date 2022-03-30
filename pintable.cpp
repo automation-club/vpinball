@@ -13,6 +13,7 @@
 #include "freeimage.h"
 #include "inc\ThreadPool.h"
 #include "inc\scalefx.h"
+#include "pin\player.h"
 
 #include "inc\serial.h"
 static serial Serial;
@@ -4428,6 +4429,33 @@ void PinTable::FireKeyEvent(int dispid, int keycode)
          fprintf(g_pplayer->m_flog, "Key Down %d\n", keycode);
       else
          fprintf(g_pplayer->m_flog, "Key Up %d\n", keycode);
+   }
+#endif
+
+#if logging
+   if (dispid == DISPID_GameEvents_KeyDown)
+   {
+      if (keycode == g_pplayer->m_rgKeys[eLeftFlipperKey])
+         g_pplayer->current_action = 'L';
+      else if (keycode == g_pplayer->m_rgKeys[eRightFlipperKey])
+         g_pplayer->current_action = 'R';
+
+    //  switch (keycode)
+    //  {
+		  //case g_pplayer->m_rgKeys[eLeftFlipperKey]: 
+    //          
+    //          g_pplayer->current_action = 'L';
+    //          break;
+    //      
+    //      case g_pplayer->m_rgKeys[eRightFlipperKey]:
+    //          g_pplayer->current_action = 'R';
+    //          break;
+
+    //  }
+   }
+   else if (dispid == DISPID_GameEvents_KeyUp && (keycode == g_pplayer->m_rgKeys[eLeftFlipperKey] || keycode == g_pplayer->m_rgKeys[eRightFlipperKey]))
+   {
+      g_pplayer->current_action = 'N';
    }
 #endif
 

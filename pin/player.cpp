@@ -4961,6 +4961,10 @@ void Player::Render()
 
       g_pplayer->SendRequestToPython(posAndVelXYZ);
       
+#if logging
+      std::cout << g_pplayer->current_action << "\n"    ;
+#endif
+
    }
    else
    {
