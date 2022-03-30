@@ -32,6 +32,7 @@ public:
    {
       try
       {
+
          // Send data to socket
          socket.send(zmq::buffer(data), zmq::send_flags::none);
 
@@ -45,12 +46,16 @@ public:
          // Act on response
          Socket::process_agent_input(strReply);
 
+//#ifdef logging
+//         // BALL POS, x, y, z, velx, vely, velz, action
+//		 g_pplayer->gameLogFile << data << "," << strReply;
+//#endif
+
       }
       catch (zmq::error_t e)
       {
          std::cout << "Error Sending Data " << e.what() << std::endl;
       }
-        
    };
    void cleanup()
    {

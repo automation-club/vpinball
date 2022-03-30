@@ -10,6 +10,13 @@
 #define DEFAULT_PLAYER_FS_WIDTH 1920
 #define DEFAULT_PLAYER_FS_REFRESHRATE 60
 
+#define logging true
+
+#if logging
+    // change file name to whatever you want, files will be saved to the runs/ folder
+    #define gameLogFilePath "..\\..\\..\\runs\\experience-learning.txt"
+#endif
+
 constexpr int DBG_SPRITE_SIZE = 1024;
 
 // NOTE that the following four definitions need to be in sync in their order!
@@ -300,6 +307,7 @@ public:
    void LockForegroundWindow(const bool enable);
    void SendRequestToPython(const string payload);
    std::ofstream gameLogFile;
+   char current_action = 'N';
    void Render();
    void RenderDynamics();
 

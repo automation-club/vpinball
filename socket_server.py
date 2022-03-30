@@ -5,11 +5,13 @@ import keyboard
 import os
 import torch
 import numpy as np
+import pandas as pd
 
 from pathlib import Path
 from zmq.sugar.socket import Socket
 from torch import nn
 from collections import deque
+from torch.utils.data import Dataset
 
 
 class SimpleDQN(nn.Module):
@@ -83,6 +85,25 @@ def start_new_game(socket):
             break
 
 
+# Parse the fucking file
+def parse_file(file):
+    columns = ["_", "X", "Y", "Z", "VelX", "VelY", "VelZ", "Action"]
+    df = pd.read_table("./runs/experience-learning.txt", sep=",",columns=columns) 
+    df.drop(columns=["_"], inplace=True)
+    return df
+
+class text_dataset(Dataset):
+    def __init__(self, observations, labels):
+        self.observations = observations
+        self.labels =  
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        return self.data.iloc[idx] 
+
+
 def handle_socket_server(socket: Socket):
     # Observation Space: Pos X, Y, Z & Vel X, Y, Z
     # Action Space: L Flipper, R Flipper, Both Flippers, No Flippers
@@ -112,7 +133,7 @@ def handle_socket_server(socket: Socket):
 
         elif client_request[0] == "BALL POS":
             # Decide Action
-            action = "N"
+            action = ""
             # if i % 30 == 0:
             #     action_space = ["L", "R", "B", "N", "P"]
             #     action = random.choice(action_space)

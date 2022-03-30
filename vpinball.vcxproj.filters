@@ -1,0 +1,1302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\CMakeFiles\vpinball.dir\cmake_pch.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\BlackBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\codeviewedit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\CrashHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\Debugger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\AboutDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\AudioOptionsDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\CollectionManagerDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\DimensionDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\DrawingOrderDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\EditorOptionsDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\ImageDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\KeysConfigDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\LayersListDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\MaterialDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\NotesDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\ScriptErrorDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\PhysicsOptionsDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\BackglassCameraProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\BackglassVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\BumperPhysicsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\BumperVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\DecalVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\DispreelStateProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\DispreelVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\DragpointVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\FlasherVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\FlipperPhysicsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\FlipperVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\GatePhysicsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\GateVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\HitTargetPhysicsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\HitTargetVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\KickerPhysicsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\KickerVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\LightseqStatesProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\LightStatesProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\LightVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\PlungerPhysicsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\PlungerVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\PrimitivePhysicsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\PrimitivePositionProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\PrimitiveVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\PropertyDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\RampPhysicsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\RampVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\RubberPhysicsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\RubberVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\SpinnerPhysicsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\SpinnerVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\TableCustomProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\TableLightsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\TablePhysicsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\TableVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\TextboxVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\TriggerPhysicsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\TriggerVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\WallPhysicsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\WallVisualsProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\SearchSelectDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\SoundDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\TableInfoDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\ToolbarDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\VideoOptionsDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\flasher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\hittarget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\imgui\imgui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\imgui\imgui_draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\imgui\imgui_impl_dx9.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\imgui\imgui_impl_win32.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\imgui\imgui_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\imgui\imgui_widgets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\imgui\implot\implot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\imgui\implot\implot_items.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\gpuprofiler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\serial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\progmesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\IndexBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\math\math.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\math\matrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\media\fileio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\media\lzwreader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\media\lzwwriter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\media\wavread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\MemoryStatus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\rubber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\hash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\kdtree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\objloader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pin\ball.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pin\collide.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pin\collideex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pin\hitflipper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pin\hitplunger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pin\player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\ballex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\bumper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\codeview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\decal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\def.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dispreel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\disputil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dragpoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\eventproxy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\extern.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\flipper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\gate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\hid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\hitrectsur.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\hitsur.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\ieditable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\iselect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\kicker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\lightseq.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\memutil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\mixer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\paintsur.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pin3d.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pinbinary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pininput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pinsound.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pintable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pinundo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\plumb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\plunger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\primitive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\quadtree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\ramp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\regutil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\RenderDevice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\slintf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\spinner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\StackTrace.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\surface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\textbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\TextureManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\trigger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\variant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\VertexBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\vpinball.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\wintimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\worker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\audioplayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\BlackBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\codeviewedit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\CrashHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\Debugger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\AboutDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\AudioOptionsDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\CollectionManagerDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\DimensionDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\DrawingOrderDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\EditorOptionsDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\ImageDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\KeysConfigDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\LayersListDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\MaterialDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\NotesDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\ScriptErrorDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\PhysicsOptionsDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\BackglassCameraProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\BackglassVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\BumperPhysicsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\BumperVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\DecalVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\DispreelStateProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\DispreelVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\DragpointVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\FlasherVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\FlipperVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\FlipperPhysicsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\GatePhysicsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\GateVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\HitTargetPhysicsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\HitTargetVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\KickerPhysicsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\KickerVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\LightseqStatesProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\LightStatesProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\LightVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\PlungerPhysicsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\PlungerVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\PrimitivePhysicsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\PrimitivePositionProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\PrimitiveVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\PropertyDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\RampPhysicsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\RampVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\RubberPhysicsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\RubberVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\SpinnerVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\SpinnerPhysicsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\TableCustomProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\TableLightsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\TablePhysicsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\TableVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\TextboxVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\TriggerPhysicsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\TriggerVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\WallPhysicsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\Properties\WallVisualsProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\SearchSelectDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\SoundDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\TableInfoDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\ToolbarDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dialogs\VideoOptionsDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\flasher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\hittarget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\imgui\imconfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\imgui\imgui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\imgui\imgui_impl_dx9.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\imgui\imgui_impl_win32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\imgui\imgui_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\imgui\implot\implot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\imgui\implot\implot_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\gpuprofiler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\serial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\bass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\forsyth.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\freeimage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\hidpi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\hidsdi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\hidusage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\nvapi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\nvapi_lite_common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\nvapi_lite_d3dext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\nvapi_lite_salend.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\nvapi_lite_salstart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\nvapi_lite_sli.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\nvapi_lite_stereo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\nvapi_lite_surround.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\progmesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\progmesh_vecmatquat_minimal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\scilexer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\scintilla.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\Sci_Position.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\ThreadPool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_appcore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_appcore0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_archive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_commondlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_controls.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_cstring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_ddx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_dialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_dockframe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_docking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_exception.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_file.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_filefind.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_folderdialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_frame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_gdi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_imagelist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_listview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_mdi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_menubar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_metafile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_mutex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_printdialogs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_propertysheet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_rebar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_rect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_regkey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_ribbon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_richedit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_scrollview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_shared_ptr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_socket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_statusbar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_stdcontrols.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_tab.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_taskdialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_textconv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_themes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_toolbar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_treeview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_wceframe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_wcestddef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_webbrowser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_wincore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\inc\win32xx\include\wxx_wincore0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\IndexBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\math\bbox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\math\math.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\math\matrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\math\vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\media\fileio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\media\lzwreader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\media\lzwwriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\media\wavread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\MemoryStatus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\hash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\kdtree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\objloader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pin\ball.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pin\collide.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pin\collideex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pin\hitable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pin\hitflipper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pin\hitplunger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pin\hittimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pin\player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\ballex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\bumper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\codeview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\decal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\def.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dispid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dispreel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\disputil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\dragpoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\editablereg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\eventproxy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\extern.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\flipper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\gate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\helpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\hid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\hitrectsur.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\hitsur.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\idebug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\ieditable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\iselect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\kicker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\lightseq.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\Material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\memutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\ballMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\bulbLightMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\bulbSocketMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\bumperBaseMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\bumperCapMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\bumperRingMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\bumperSocketMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\dropTargetT2Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\dropTargetT3Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\dropTargetT4Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\flipperBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\gateBracketMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\gateLongPlateMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\gatePlateMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\gateWireMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\gateWireRectangleMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\hitTargetFatRectangleMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\hitTargetFatSquareMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\hitTargetRectangleMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\hitTargetRoundMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\hitTargetT1SlimMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\hitTargetT2SlimMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\kickerCupMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\kickerHitMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\kickerHoleMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\kickerSimpleHoleMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\spinnerBracketMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\spinnerPlateMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\triggerSimpleMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\meshes\triggerStarMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\mixer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\paintsur.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\physconst.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pin3d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pinbinary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pininput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pinsound.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pintable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\pinundo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\plumb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\plunger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\primitive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\quadtree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\ramp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\regutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\RenderDevice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\rubber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\slintf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\spinner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\StackTrace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\surface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\textbox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\TextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\trace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\trigger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\variant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\vectorsort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\VertexBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\vpinball_h.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\vpversion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\wintimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\worker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\audioplayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\CMakeFiles\vpinball.dir\Debug\cmake_pch.hxx">
+      <Filter>Precompile Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\CMakeFiles\vpinball.dir\Release\cmake_pch.hxx">
+      <Filter>Precompile Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\CMakeFiles\vpinball.dir\MinSizeRel\cmake_pch.hxx">
+      <Filter>Precompile Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\CMakeFiles\vpinball.dir\RelWithDebInfo\cmake_pch.hxx">
+      <Filter>Precompile Header File</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <FXCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\shader\BallShader.hlsl" />
+    <FXCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\shader\BasicShader.hlsl" />
+    <FXCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\shader\DMDShader.hlsl" />
+    <FXCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\shader\FBShader.hlsl" />
+    <FXCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\shader\FlasherShader.hlsl" />
+    <FXCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\shader\LightShader.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\vpinball.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\ball.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\bumper.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\hittarget.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\dispreel.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\dragpoint.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\flasher.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\rubber.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\flipper.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\gate.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\kicker.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\light.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\lightseq.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\pieventhandler.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\plunger.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\primitive.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\ramp.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\spinner.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\surface.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\textbox.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\timer.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\trigger.rgs" />
+    <None Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\res\vpinball.rgs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\Users\aubte\Desktop\Web-Dev\vpinball\vpinball.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{66B9A3C0-3498-3169-A244-2EE17D94C7CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Precompile Header File">
+      <UniqueIdentifier>{78B95284-0196-35EE-A30D-8D0141D11C8A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{F2B1F7A2-72ED-3D62-9E42-F28DC6B391BB}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

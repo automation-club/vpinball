@@ -4,13 +4,9 @@
 #include <fstream>
 #include <filesystem>
 #include <iostream>
+#include "../pin/player.h"
 
-#define logging false
 
-#if logging
-    // change file name to whatever you want, files will be saved to the runs/ folder
-    #define gameLogFilePath "..\\..\\..\\runs\\test1.txt"
-#endif
 
 //#define USE_IMGUI
 #ifdef USE_IMGUI
@@ -4888,9 +4884,6 @@ void Player::SendRequestToPython(string payload) {
 #ifdef socks
       sock->send_request(payload);
 #endif
-#if logging
-      g_pplayer->gameLogFile << payload << "\n";
-#endif
 }
 
 void Player::Render()
@@ -4965,6 +4958,10 @@ void Player::Render()
 
       g_pplayer->SendRequestToPython(posAndVelXYZ);
       
+#if logging
+      g_pplayer->gameLogFile << posAndVelXYZ << "," << g_pplayer->current_action << "\n";
+#endif
+
    }
    else
    {
