@@ -4440,18 +4440,6 @@ void PinTable::FireKeyEvent(int dispid, int keycode)
       else if (keycode == g_pplayer->m_rgKeys[eRightFlipperKey])
          g_pplayer->current_action = 'R';
 
-    //  switch (keycode)
-    //  {
-		  //case g_pplayer->m_rgKeys[eLeftFlipperKey]: 
-    //          
-    //          g_pplayer->current_action = 'L';
-    //          break;
-    //      
-    //      case g_pplayer->m_rgKeys[eRightFlipperKey]:
-    //          g_pplayer->current_action = 'R';
-    //          break;
-
-    //  }
    }
    else if (dispid == DISPID_GameEvents_KeyUp && (keycode == g_pplayer->m_rgKeys[eLeftFlipperKey] || keycode == g_pplayer->m_rgKeys[eRightFlipperKey]))
    {

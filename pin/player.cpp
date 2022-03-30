@@ -4884,9 +4884,6 @@ void Player::SendRequestToPython(string payload) {
 #ifdef socks
       sock->send_request(payload);
 #endif
-#if logging
-      g_pplayer->gameLogFile << payload << "\n";
-#endif
 }
 
 void Player::Render()
@@ -4962,7 +4959,7 @@ void Player::Render()
       g_pplayer->SendRequestToPython(posAndVelXYZ);
       
 #if logging
-      std::cout << g_pplayer->current_action << "\n"    ;
+      g_pplayer->gameLogFile << posAndVelXYZ << "," << g_pplayer->current_action << "\n";
 #endif
 
    }
