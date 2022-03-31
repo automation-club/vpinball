@@ -13,10 +13,6 @@ project(vpinball VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_REV}")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 99)
 
-#find cppzmq wrapper, installed by make of cppzmq
-find_package(cppzmq)
-
-
 add_compile_options(
    $<$<CONFIG:RELEASE>:/Ob2>
    $<$<CONFIG:RELEASE>:/O2>
@@ -558,6 +554,7 @@ target_link_libraries(vpinball
    dinput.lib
    nvapi.lib
    winmm.lib
+   libzmq-mt-s-4_3_4.lib
    hid.lib
    setupapi.lib
 )
