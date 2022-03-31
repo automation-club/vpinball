@@ -58,7 +58,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [windows-latest]
 
     steps:
       - uses: actions/checkout@v2
@@ -79,7 +79,6 @@ jobs:
         with:
           configurePreset: "ninja-multi-vcpkg"
           buildPreset: "ninja-multi-vcpkg-debug"
-          testPreset: "ninja-multi-vcpkg-debug"
 
   build:
     name: Build VPinballX-${{ matrix.config }}-${{ matrix.platform }}
