@@ -116,7 +116,7 @@ jobs:
 
       - run: |
           mkdir tmp 
-          cp temp tmp
+          cp -r temp tmp
           cp build/${{ matrix.config }}/VPinballX.* tmp
           cp lib/libzmq-v142-mt-4_3_4.dll tmp
           cp dll/${{ matrix.bass }} tmp
