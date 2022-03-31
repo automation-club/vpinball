@@ -11,7 +11,7 @@ from pathlib import Path
 from zmq.sugar.socket import Socket
 from torch import nn
 from collections import deque
-from torch.utils.data import Dataset
+from torch.utils.data import Dataset, DataLoader
 
 
 class SimpleDQN(nn.Module):
@@ -38,6 +38,7 @@ class SimpleDQN(nn.Module):
         random.seed(seed)
         np.random.seed(seed)
 
+
 def fire_plunger(socket):
     socket.send("P".encode())
     for i in range(120):
@@ -49,6 +50,7 @@ def fire_plunger(socket):
     for i in range(60):
         socket.recv()
         socket.send("".encode())
+
 
 # dont worry about how this works or what it does
 # just trust that it works (until someone finds the fucking game end call)
@@ -86,22 +88,36 @@ def start_new_game(socket):
 
 
 # Parse the fucking file
-def parse_file(file):
+def parse_file(file_path):
     columns = ["_", "X", "Y", "Z", "VelX", "VelY", "VelZ", "Action"]
-    df = pd.read_table("./runs/experience-learning.txt", sep=",",columns=columns) 
+    df = pd.read_table(file_path, sep=",", names=columns)
     df.drop(columns=["_"], inplace=True)
-    return df
+    df["Action"] = df["Action"].astype('category').cat.codes
+    torch_tensor = torch.tensor(df.values)
 
-class text_dataset(Dataset):
-    def __init__(self, observations, labels):
-        self.observations = observations
-        self.labels =  
+    return torch_tensor
+    # return df[["X", "Y", "Z", "VelX", "VelY", "VelZ"]], df[["Action"]]
+
+
+class DatasetFromTXT(Dataset):
+    def __init__(self, data):
+        self.data = data
 
     def __len__(self):
         return len(self.data)
 
     def __getitem__(self, idx):
-        return self.data.iloc[idx] 
+        return self.data[idx, 0:6], self.data[idx, 6]
+
+
+def test():
+    data = parse_file("./runs/experience-learning.txt")
+    dataset = DatasetFromTXT(data)
+    loader = DataLoader(dataset, batch_size=32, shuffle=True)
+
+    for x,y in loader:
+        print(x.shape)
+        break
 
 
 def handle_socket_server(socket: Socket):
@@ -169,7 +185,7 @@ def main():
     server_shutdown_thread = threading.Thread(target=detect_keypress, args=())
     # Thread for starting Visual Pinball
     # Pass in lanuch args to VPinball
-    
+
     launch_vp_thread = threading.Thread(target=launch_visual_pinball, args=(str(VISUAL_PINBALL_EXE_PATH),))
 
     # Start Threads
@@ -185,4 +201,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+    test()
