@@ -1,5 +1,5 @@
 {
   "name": "main",
   "version-string": "latest",
-  "dependencies": ["cppzmq", "zeromq:x64-windows-static"]
+  "dependencies": ["cppzmq"]
 }
