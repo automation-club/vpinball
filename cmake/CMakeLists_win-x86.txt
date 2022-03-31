@@ -9,6 +9,7 @@ string(REGEX MATCH "VP_VERSION_REV[ ]+([0-9]+)" _tmp ${version})
 set(VERSION_REV "${CMAKE_MATCH_1}")
 
 project(vpinball VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_REV}")
+find_package(cppzmq CONFIG REQUIRED)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 99)
@@ -75,7 +76,6 @@ set_source_files_properties(shader/LightShader.hlsl PROPERTIES
    VS_SHADER_OUTPUT_HEADER_FILE "${CMAKE_CURRENT_BINARY_DIR}/$(IntDir)/shader/%(Filename).h"
    VS_SHADER_ENTRYPOINT lightShaderCode 
 )
-find_package(cppzmq)
 add_executable(vpinball WIN32
    BlackBox.cpp
    BlackBox.h
@@ -548,9 +548,10 @@ target_link_libraries(vpinball
    comctl32.lib
    FreeImage.lib
    dxguid.lib
+   cppzmq 
+   cppzmq-static
    dsound.lib 
    bass.lib
-   libzmq-mt-sgd-4_3_1.lib
    Ws2_32.lib
    Iphlpapi.lib
    dinput.lib
