@@ -101,18 +101,6 @@ jobs:
             sci-lexer-vp: x64/SciLexerVP64.dll
             zmq: libzmq-mt-gd-4_3_4.dll
             config: Debug
-          - platform: win-x86
-            platform-name: Win32
-            bass: Bass.dll
-            free-image: FreeImage.dll
-            sci-lexer-vp: SciLexerVP.dll
-            config: Release
-          - platform: win-x86
-            platform-name: Win32
-            bass: Bass.dll
-            free-image: FreeImage.dll
-            sci-lexer-vp: SciLexerVP.dll
-            config: Debug
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
