@@ -550,6 +550,9 @@ target_link_libraries(vpinball
    dxguid.lib
    dsound.lib 
    bass.lib
+   libzmq-mt-sgd-4_3_1.lib
+   Ws2_32.lib
+   Iphlpapi.lib
    dinput.lib
    nvapi.lib
    winmm.lib
