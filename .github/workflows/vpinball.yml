@@ -102,7 +102,7 @@ jobs:
       - name: Compress
         if: matrix.config == 'Release'
         run: |
-          curl -sL -H "Authorization: Basic AllusiveWheat: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" https://api.github.com/repos/upx/upx/actions/artifacts/${{ env.UPX_ARTIFACT }}/zip -o upx.zip
+          curl -sL -H "Authorization: Basic AllusiveWheat:${{secrets.GH_PAT}}" https://api.github.com/repos/upx/upx/actions/artifacts/${{ env.UPX_ARTIFACT }}/zip -o upx.zip
           7z x upx.zip -oupx
           rm upx.zip
           ./upx/upx.exe --best --lzma build/${{ matrix.config }}/VPinballX.exe
