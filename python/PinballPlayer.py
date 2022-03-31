@@ -41,14 +41,17 @@ class PinballPlayer:
         while True:
             # Get the observation from the game
             message = self._server.receive_message().split(",")
+            message_type = message[0]
+            observation = message[1:]
 
             # Process observation and take next action accordingly
-            if message[0] == "BALL INFO":  # Ball is in play
-                pass
-            elif message[0] == "BALL CREATED":  # New ball put into play
-                pass
-            elif message[0] == "NO BALL ON FIELD":  # No active ball on the field
-                pass
+            if message_type == "BALL INFO":  # Ball is in play
+                action = self._choose_action(observation)
+                self._server.send_message(action)
+            elif message_type == "BALL CREATED":  # New ball put into play
+                self._launch_ball()
+            elif message_type == "NO BALL ON FIELD":  # No active ball on the field
+                self._start_new_game()
             else:  # Any other calls (not relevant)
                 self._server.send_message("")  # Empty action response
 
@@ -100,3 +103,52 @@ class PinballPlayer:
             The action to take.
         """
         return None
+
+    def _launch_ball(self):
+        """
+        Launches a ball into play.
+
+        Returns
+        -------
+        None
+        """
+        self._server.send_message("P")
+        for i in range(120):
+            self._server.receive_message()
+            self._server.send_message("")
+
+        self._server.receive_message()
+        self._server.send_message("N")
+        for i in range(60):
+            self._server.receive_message()
+            self._server.send_message("")
+
+    def _start_new_game(self):
+        """
+        Starts a new game.
+
+        Returns
+        -------
+        None
+        """
+        # Input first credit
+        self._server.send_message("C")
+        for i in range(90):  # Wait for credit to register
+            self._check_ball_created("")
+        # Input second credit
+        self._check_ball_created("C")
+        for i in range(200):  # Wait for credit to register
+            self._check_ball_created("")
+        # Key down on start key
+        self._check_ball_created("s")
+        # Key up on start key
+        self._check_ball_created("S")
+
+        # Wait for ball to be created
+        while True:
+            self._check_ball_created("")
+
+    def _check_ball_created(self, message):
+        if self._server.receive_message() == "BALL CREATED":
+            self._launch_ball()
+        self._server.send_message(message)

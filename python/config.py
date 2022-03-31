@@ -1,6 +1,6 @@
 from pathlib import Path
 
-VISUAL_PINBALL_EXECUTABLE_PATH = Path("../x64/Debug/VPinball.exe")
+VPINBALL_EXECUTABLE_PATH = Path("../x64/Debug/VPinball.exe")
 """Path: Path to the VPinball executable."""
 
 # Socket Configuration
