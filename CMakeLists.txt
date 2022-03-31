@@ -13,6 +13,10 @@ project(vpinball VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_REV}")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 99)
 
+#find cppzmq wrapper, installed by make of cppzmq
+find_package(cppzmq)
+
+
 add_compile_options(
    $<$<CONFIG:RELEASE>:/Ob2>
    $<$<CONFIG:RELEASE>:/O2>
@@ -546,6 +550,7 @@ target_link_directories(vpinball PUBLIC
 
 target_link_libraries(vpinball
    comctl32.lib
+   cppzmq
    FreeImage.lib
    dxguid.lib
    dsound.lib 
