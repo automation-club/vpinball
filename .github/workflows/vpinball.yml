@@ -52,6 +52,51 @@ jobs:
           echo "::set-output name=revision::${REVISION}"
           echo "::set-output name=sha7::${SHA7}"
           echo "::set-output name=tag::${TAG}"
+  vcpkg:
+    name: ${{ matrix.os }}-${{ github.workflow }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest]
+        include:
+          - os: windows-latest
+            vcpkgCommitId: "5568f110b509a9fd90711978a7cb76bae75bb092"
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - uses: lukka/get-cmake@latest
+      - name: List $RUNNER_WORKSPACE before build
+        run: find $RUNNER_WORKSPACE
+        shell: bash
+
+      - name: Restore artifacts, or run vcpkg, build (and cache artifacts as post step)
+        uses: lukka/run-vcpkg@main
+        id: runvcpkg
+        with:
+          vcpkgDirectory: "${{ runner.workspace }}/b/vcpkg"
+          vcpkgGitCommitId: "${{ matrix.vcpkgCommitId }}"
+          # Run vcpkg with the command specified by the `runVcpkgFormatString` input.
+          runVcpkgInstall: true
+          vcpkgJsonGlob: "**/cmakepresets/vcpkg.json"
+          appendedCacheKey: vcpkginstall
+
+      - name: Prints output of run-vcpkg's action.
+        run: echo "root='${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_ROOT_OUT }}', triplet='${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_DEFAULT_TRIPLET_OUT }}' "
+
+      - name: Run CMake with Ninja
+        uses: lukka/run-cmake@v10
+        with:
+          cmakeListsTxtPath: "${{ github.workspace }}/cmakepresets/CMakeLists.txt"
+          configurePreset: "ninja-multi-vcpkg"
+          buildPreset: "ninja-multi-vcpkg"
+
+      - name: List $RUNNER_WORKSPACE after build
+        run: find $RUNNER_WORKSPACE
+        shell: bash
 
   build:
     name: Build VPinballX-${{ matrix.config }}-${{ matrix.platform }}
@@ -72,6 +117,7 @@ jobs:
             bass: x64/Bass64.dll
             free-image: x64/FreeImage64.dll
             sci-lexer-vp: x64/SciLexerVP64.dll
+            zmq: libzmq-mt-gd-4_3_4.dll
             config: Debug
           - platform: win-x86
             platform-name: Win32
@@ -111,6 +157,7 @@ jobs:
           mkdir tmp 
           cp build/${{ matrix.config }}/VPinballX.* tmp
           cp dll/${{ matrix.bass }} tmp
+          cp dll/${{ matrix.zmq }} tmp
           cp dll/${{ matrix.free-image }} tmp
           cp dll/${{ matrix.sci-lexer-vp }} tmp
           cp txt/Changelog_Scripts.txt tmp
