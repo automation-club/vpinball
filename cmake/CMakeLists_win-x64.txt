@@ -9,14 +9,10 @@ string(REGEX MATCH "VP_VERSION_MINOR[ ]+([0-9]+)" _tmp ${version})
 set(VERSION_MINOR "${CMAKE_MATCH_1}")
 string(REGEX MATCH "VP_VERSION_REV[ ]+([0-9]+)" _tmp ${version})
 set(VERSION_REV "${CMAKE_MATCH_1}")
-find_package(ZeroMQ)
-find_package(cppzmq)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_PROGRAM_PATH}/vpkg/packages/cppzmq_x64-windows/share/cppzmq)
-set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} ${CMAKE_PROGRAM_PATH}/vpkg/packages/cppzmq_x64-windows/share/cppzmq)
-set(ZeroMQ_DIR ${ZeroMQ_DIR} ${CMAKE_PROGRAM_PATH}/vpkg/packages/ZeroMQ_x64-windows/share/ZeroMQ)
-set(cppzmq_DIR ${cppzmq_DIR} ${CMAKE_PROGRAM_PATH}/vpkg/packages/cppzmq_x64-windows/share/cppzmq)
 project(vpinball VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_REV}")
-
+# Env to the vcpkg dir
+# Read the module path from the vcpkg dir
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_PROGRAM_PATH}/vpkg/share/cmake)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 99)
 
@@ -556,6 +552,7 @@ target_link_libraries(vpinball
    dxguid.lib 
    dsound.lib 
    bass.lib
+   libzmq-v142-mt-4_3_4.lib
    Ws2_32.lib
    Iphlpapi.lib
    dinput.lib
