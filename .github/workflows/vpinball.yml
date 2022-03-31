@@ -59,6 +59,12 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-latest]
+        include:
+          - os: windows-latest
+            triplet: x64-windows
+
+    env:
+      VCPKG_DEFAULT_TRIPLET: ${{ matrix.triplet }}
 
     steps:
       - uses: actions/checkout@v2
@@ -66,20 +72,33 @@ jobs:
           submodules: true
 
       - uses: lukka/get-cmake@latest
+      - name: dir
+        run: find $RUNNER_WORKSPACE
+        shell: bash
 
       - name: Restore artifacts, or setup vcpkg for building artifacts
-        uses: lukka/run-vcpkg@v10
+        uses: lukka/run-vcpkg@main
         id: runvcpkg
         with:
+          # This one is not needed, as it is the default value anyway.
+          # vcpkgDirectory: '${{ github.workspace }}/vcpkg'
           vcpkgJsonGlob: "vcpkg.json"
 
-      - name: Run CMake+vcpkg+Ninja+CTest to generate/build/test.
+      - name: List $RUNNER_WORKSPACE before build
+        run: find $RUNNER_WORKSPACE
+        shell: bash
+      - name: Prints output of run-vcpkg's action.
+        run: echo "root='${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_ROOT_OUT }}', triplet='${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_DEFAULT_TRIPLET_OUT }}' "
+      - name: Run CMake+vcpkg+Ninja
         uses: lukka/run-cmake@v10
         id: runcmake
         with:
+          cmakeListsTxtPath: "${{ github.workspace }}/cmakepresets/CMakeLists.txt"
           configurePreset: "ninja-multi-vcpkg"
-          buildPreset: "ninja-multi-vcpkg-debug"
-
+          buildPreset: "ninja-multi-vcpkg"
+      - name: List $RUNNER_WORKSPACE after build
+        run: find $RUNNER_WORKSPACE
+        shell: bash
   build:
     name: Build VPinballX-${{ matrix.config }}-${{ matrix.platform }}
     runs-on: windows-latest
