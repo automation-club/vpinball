@@ -9,6 +9,7 @@ string(REGEX MATCH "VP_VERSION_MINOR[ ]+([0-9]+)" _tmp ${version})
 set(VERSION_MINOR "${CMAKE_MATCH_1}")
 string(REGEX MATCH "VP_VERSION_REV[ ]+([0-9]+)" _tmp ${version})
 set(VERSION_REV "${CMAKE_MATCH_1}")
+find_package(ZeroMQ)
 find_package(cppzmq)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_PROGRAM_PATH}/vpkg/packages/cppzmq_x86-windows/share/cppzmq)
 
@@ -551,6 +552,8 @@ target_link_directories(vpinball PUBLIC
 target_link_libraries(vpinball
    comctl32.lib
    FreeImage.lib
+   libzmq 
+   libzmq-static
    dxguid.lib
    cppzmq 
    dsound.lib 
