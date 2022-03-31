@@ -112,7 +112,7 @@ jobs:
           cd temp
           curl -L https://sourceforge.net/projects/pinmame/files/latest/download -o pinmame.zip
           unzip pinmame.zip
-          rm download
+          rm pinmame.zip
 
       - run: |
           mkdir tmp 
