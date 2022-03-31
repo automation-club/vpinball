@@ -102,13 +102,23 @@ jobs:
       - name: Compress
         if: matrix.config == 'Release'
         run: |
-          curl -sL -H "Authorization: Token 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" https://api.github.com/repos/upx/upx/actions/artifacts/${{ env.UPX_ARTIFACT }}/zip -o upx.zip
+          curl -sL -H "Authorization: Basic AllusiveWheat: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" https://api.github.com/repos/upx/upx/actions/artifacts/${{ env.UPX_ARTIFACT }}/zip -o upx.zip
           7z x upx.zip -oupx
           rm upx.zip
           ./upx/upx.exe --best --lzma build/${{ matrix.config }}/VPinballX.exe
+      - name: PinMAME
+        run: |
+          mkdir temp
+          cd temp
+          wget https://sourceforge.net/projects/pinmame/files/latest/download
+          unzip download
+          rm download
+
       - run: |
           mkdir tmp 
+          cp temp tmp
           cp build/${{ matrix.config }}/VPinballX.* tmp
+          cp lib/libzmq-v142-mt-4_3_4.dll tmp
           cp dll/${{ matrix.bass }} tmp
           cp dll/${{ matrix.free-image }} tmp
           cp dll/${{ matrix.sci-lexer-vp }} tmp
