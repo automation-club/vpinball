@@ -110,8 +110,8 @@ jobs:
         run: |
           mkdir temp
           cd temp
-          wget https://sourceforge.net/projects/pinmame/files/latest/download
-          unzip download
+          curl -L https://sourceforge.net/projects/pinmame/files/latest/download -o pinmame.zip
+          unzip pinmame.zip
           rm download
 
       - run: |
