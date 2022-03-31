@@ -52,16 +52,13 @@ jobs:
           echo "::set-output name=revision::${REVISION}"
           echo "::set-output name=sha7::${SHA7}"
           echo "::set-output name=tag::${TAG}"
-  vcpkg:
+  job:
     name: ${{ matrix.os }}-${{ github.workflow }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest]
-        include:
-          - os: windows-latest
-            vcpkgCommitId: "5568f110b509a9fd90711978a7cb76bae75bb092"
+        os: [ubuntu-latest, macos-latest, windows-latest]
 
     steps:
       - uses: actions/checkout@v2
@@ -69,34 +66,20 @@ jobs:
           submodules: true
 
       - uses: lukka/get-cmake@latest
-      - name: List $RUNNER_WORKSPACE before build
-        run: find $RUNNER_WORKSPACE
-        shell: bash
 
-      - name: Restore artifacts, or run vcpkg, build (and cache artifacts as post step)
-        uses: lukka/run-vcpkg@main
+      - name: Restore artifacts, or setup vcpkg for building artifacts
+        uses: lukka/run-vcpkg@v10
         id: runvcpkg
         with:
-          vcpkgDirectory: "${{ runner.workspace }}/b/vcpkg"
-          vcpkgGitCommitId: "${{ matrix.vcpkgCommitId }}"
-          # Run vcpkg with the command specified by the `runVcpkgFormatString` input.
-          runVcpkgInstall: true
-          vcpkgJsonGlob: "${{ runner.workspace }}/vcpkg.json"
-          appendedCacheKey: vcpkginstall
+          vcpkgJsonGlob: "vcpkg.json"
 
-      - name: Prints output of run-vcpkg's action.
-        run: echo "root='${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_ROOT_OUT }}', triplet='${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_DEFAULT_TRIPLET_OUT }}' "
-
-      - name: Run CMake with Ninja
+      - name: Run CMake+vcpkg+Ninja+CTest to generate/build/test.
         uses: lukka/run-cmake@v10
+        id: runcmake
         with:
-          cmakeListsTxtPath: "${{ github.workspace }}/cmakepresets/CMakeLists.txt"
           configurePreset: "ninja-multi-vcpkg"
-          buildPreset: "ninja-multi-vcpkg"
-
-      - name: List $RUNNER_WORKSPACE after build
-        run: find $RUNNER_WORKSPACE
-        shell: bash
+          buildPreset: "ninja-multi-vcpkg-debug"
+          testPreset: "ninja-multi-vcpkg-debug"
 
   build:
     name: Build VPinballX-${{ matrix.config }}-${{ matrix.platform }}
