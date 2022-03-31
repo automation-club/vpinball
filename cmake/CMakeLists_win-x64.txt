@@ -75,7 +75,7 @@ set_source_files_properties(shader/LightShader.hlsl PROPERTIES
    VS_SHADER_OUTPUT_HEADER_FILE "${CMAKE_CURRENT_BINARY_DIR}/$(IntDir)/shader/%(Filename).h"
    VS_SHADER_ENTRYPOINT lightShaderCode 
 )
-
+find_package(cppzmq)
 add_executable(vpinball WIN32
    BlackBox.cpp
    BlackBox.h
