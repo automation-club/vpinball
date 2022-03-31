@@ -10,6 +10,7 @@ set(VERSION_MINOR "${CMAKE_MATCH_1}")
 string(REGEX MATCH "VP_VERSION_REV[ ]+([0-9]+)" _tmp ${version})
 set(VERSION_REV "${CMAKE_MATCH_1}")
 find_package(cppzmq)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_PROGRAM_PATH}/vpkg/packages/cppzmq_x86-windows/share/cppzmq)
 
 
 project(vpinball VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_REV}")
@@ -552,7 +553,6 @@ target_link_libraries(vpinball
    FreeImage.lib
    dxguid.lib
    cppzmq 
-   cppzmq-static
    dsound.lib 
    bass.lib
    Ws2_32.lib
