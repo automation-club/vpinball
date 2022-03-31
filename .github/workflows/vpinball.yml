@@ -55,6 +55,7 @@ jobs:
   job:
     name: ${{ matrix.os }}-${{ github.workflow }}
     runs-on: ${{ matrix.os }}
+    needs: [dxsdk]
     strategy:
       fail-fast: false
       matrix:
@@ -86,6 +87,9 @@ jobs:
 
       - name: List $RUNNER_WORKSPACE before build
         run: find $RUNNER_WORKSPACE
+        shell: bash
+      - name: DXSDK Init
+        run: export DXSDK_DIR="${GITHUB_WORKSPACE}/DXSDK"
         shell: bash
       - name: Prints output of run-vcpkg's action.
         run: echo "root='${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_ROOT_OUT }}', triplet='${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_DEFAULT_TRIPLET_OUT }}' "
