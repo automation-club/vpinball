@@ -11,9 +11,10 @@ string(REGEX MATCH "VP_VERSION_REV[ ]+([0-9]+)" _tmp ${version})
 set(VERSION_REV "${CMAKE_MATCH_1}")
 find_package(ZeroMQ)
 find_package(cppzmq)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_PROGRAM_PATH}/vpkg/packages/cppzmq_x86-windows/share/cppzmq)
-
-
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_PROGRAM_PATH}/vpkg/packages/cppzmq_x64-windows/share/cppzmq)
+set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} ${CMAKE_PROGRAM_PATH}/vpkg/packages/cppzmq_x64-windows/share/cppzmq)
+set(ZeroMQ_DIR ${ZeroMQ_DIR} ${CMAKE_PROGRAM_PATH}/vpkg/packages/ZeroMQ_x64-windows/share/ZeroMQ)
+set(cppzmq_DIR ${cppzmq_DIR} ${CMAKE_PROGRAM_PATH}/vpkg/packages/cppzmq_x64-windows/share/cppzmq)
 project(vpinball VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_REV}")
 
 set(CMAKE_CXX_STANDARD 17)
