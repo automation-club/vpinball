@@ -1,4 +1,7 @@
+import os
+
 import zmq
+import keyboard
 
 
 class SocketServer:
@@ -71,3 +74,30 @@ class SocketServer:
         message = self._socket.recv_string()
 
         return message
+
+    @staticmethod
+    def stop_server():
+        """
+        Stops the server
+
+        Returns
+        -------
+        None
+
+        """
+        while True:
+            if keyboard.is_pressed('q'):
+                print("Shutdown key detected. Shutting down server...")
+                break
+
+    @staticmethod
+    def launch_vpinball(path):
+        """
+        Launches vpinball
+
+        Returns
+        -------
+        None
+
+        """
+        os.system(f"{path} -EnableSockets")

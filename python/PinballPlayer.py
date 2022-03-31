@@ -134,21 +134,44 @@ class PinballPlayer:
         # Input first credit
         self._server.send_message("C")
         for i in range(90):  # Wait for credit to register
-            self._check_ball_created("")
+            if self._check_ball_created(""):
+                return
         # Input second credit
-        self._check_ball_created("C")
+        if self._check_ball_created("C"):
+            return
         for i in range(200):  # Wait for credit to register
-            self._check_ball_created("")
+            if self._check_ball_created(""):
+                return
+
         # Key down on start key
-        self._check_ball_created("s")
+        if self._check_ball_created("s"):
+            return
         # Key up on start key
-        self._check_ball_created("S")
+        if self._check_ball_created("S"):
+            return
 
         # Wait for ball to be created
         while True:
-            self._check_ball_created("")
+            if self._check_ball_created(""):
+                return
 
     def _check_ball_created(self, message):
+        """
+        Checks if a ball has been created.
+
+        Parameters
+        ----------
+        message : str
+            The message to send to the game.
+
+        Returns
+        -------
+        ok : bool
+            True if a ball has been created, False otherwise.
+        """
+
         if self._server.receive_message() == "BALL CREATED":
             self._launch_ball()
+            return True
         self._server.send_message(message)
+        return False
