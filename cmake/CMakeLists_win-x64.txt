@@ -553,10 +553,7 @@ target_link_directories(vpinball PUBLIC
 target_link_libraries(vpinball
    comctl32.lib
    FreeImage.lib
-   libzmq 
-   libzmq-static
-   dxguid.lib
-   cppzmq 
+   dxguid.lib 
    dsound.lib 
    bass.lib
    Ws2_32.lib
