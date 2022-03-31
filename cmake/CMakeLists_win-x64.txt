@@ -9,9 +9,10 @@ string(REGEX MATCH "VP_VERSION_MINOR[ ]+([0-9]+)" _tmp ${version})
 set(VERSION_MINOR "${CMAKE_MATCH_1}")
 string(REGEX MATCH "VP_VERSION_REV[ ]+([0-9]+)" _tmp ${version})
 set(VERSION_REV "${CMAKE_MATCH_1}")
+find_package(cppzmq)
+
 
 project(vpinball VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_REV}")
-find_package(cppzmq CONFIG REQUIRED)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 99)
