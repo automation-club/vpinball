@@ -98,8 +98,8 @@ jobs:
         id: runcmake
         with:
           cmakeListsTxtPath: "${{ github.workspace }}/CMakeLists.txt"
-          configurePreset: "msbuild-vcpkg"
-          buildPreset: "msbuild-vcpkg"
+          configurePreset: "ninja-multi-vcpkg"
+          buildPreset: "ninja-multi-vcpkg"
       - name: List $RUNNER_WORKSPACE after build
         run: find $RUNNER_WORKSPACE
         shell: bash
