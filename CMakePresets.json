@@ -10,14 +10,14 @@
       "name": "ninja",
       "displayName": "Ninja Configure Settings",
       "description": "Sets build and install directories",
-      "binaryDir": "${sourceDir}/builds/${presetName}",
+      "binaryDir": "$${sourceDir}/builds/$${presetName}",
       "generator": "Ninja"
     },
     {
       "name": "ninja-toolchain",
       "displayName": "Ninja Configure Settings with toolchain",
       "description": "Sets build and install directories",
-      "binaryDir": "${sourceDir}/builds/${presetName}-toolchain",
+      "binaryDir": "$${sourceDir}/builds/$${presetName}-toolchain",
       "generator": "Ninja",
       "toolchainFile": "$env{TOOLCHAINFILE}"
     },
@@ -25,7 +25,7 @@
       "name": "ninja-multi-vcpkg",
       "displayName": "Ninja Multi-Config Configure Settings",
       "description": "Configure with vcpkg toolchain",
-      "binaryDir": "${sourceDir}/builds/${presetName}",
+      "binaryDir": "$${sourceDir}/builds/$${presetName}",
       "generator": "Ninja Multi-Config",
       "cacheVariables": {
         "CMAKE_TOOLCHAIN_FILE": {
