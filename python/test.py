@@ -4,18 +4,19 @@ import time
 
 from torch.utils.data import Dataset
 
-class custom_dataset(Dataset):
-    def __init__(self, ):
 
-start = time.time()
-columns=["_", "X", "Y", "Z", "VelX", "VelY", "VelZ", "Action"]
-df = pd.read_table("./runs/experience-learning.txt", sep=",", names=columns)
+# Parse the fucking file
+def parse_file(file_path):
+    columns = ["_", "X", "Y", "Z", "VelX", "VelY", "VelZ", "Action"]
+    df = pd.read_table(file_path, sep=",", names=columns)
+    df.drop(columns=["_"], inplace=True)
+    print(df["Action"].astype('category').cat.codes)
+    print(dict(enumerate(df["Action"].astype('category').cat.categories)))
+    torch_tensor = torch.tensor(df.values)
+    idx_to_action = {idx: action for idx, action in enumerate(df["Action"].unique())}
+    print(idx_to_action)
 
-print(df.dtypes)
-start = time.time()
-print(df.head())
-end = time.time()
-print(end-start)
+    return torch_tensor
 
 
-print(torch_dataset)
+x = parse_file("../runs/experience-learning.txt")

@@ -1,7 +1,5 @@
 import numpy as np
 
-from SocketServer import SocketServer
-
 
 class PinballPlayer:
     """
@@ -74,6 +72,8 @@ class PinballPlayer:
             return self._random_action()
         elif self._mode == "dqn_agent":
             return self._dqn_action(observation)
+        elif self._mode == "real_player":
+            return ""
         else:
             print("Error: Unknown mode")
 
