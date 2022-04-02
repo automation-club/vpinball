@@ -1,9 +1,8 @@
 import threading
-import config
-import os
 
-from SocketServer import SocketServer
-from PinballPlayer import PinballPlayer
+from utils import config
+from utils.socket_server import SocketServer
+from utils.pinball_player import PinballPlayer
 
 
 def main():

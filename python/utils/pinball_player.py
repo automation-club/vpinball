@@ -1,7 +1,5 @@
 import numpy as np
 
-from SocketServer import SocketServer
-
 
 class PinballPlayer:
     """
