@@ -1,5 +1,5 @@
 import numpy as np
-
+import torch
 
 class PinballPlayer:
     """
@@ -26,6 +26,7 @@ class PinballPlayer:
         self._server = socket_server
         self._action_space = ['L', 'R', 'B', 'N']
         self._play_pinball()
+        self._model = self._load_model()
 
     def _play_pinball(self):
         """
@@ -53,6 +54,20 @@ class PinballPlayer:
             else:  # Any other calls (not relevant)
                 self._server.send_message("")  # Empty action response
 
+    def _load_model(self):
+        """
+        Loads the model from disk.
+
+        Returns
+        -------
+        model : torch.nn.Module
+            The model to use.
+        """
+        model = torch.load("./saved_models/experience.pt")
+        model.eval()
+
+        return model
+
     def _choose_action(self, observation):
         """
         Determines the action to take based on the observation and decision mode.
@@ -74,6 +89,8 @@ class PinballPlayer:
             return self._dqn_action(observation)
         elif self._mode == "real_player":
             return ""
+        elif self._mode == "experience":
+            pass
         else:
             print("Error: Unknown mode")
 

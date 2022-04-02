@@ -8,6 +8,6 @@ PORT = 5555
 """int: Port to use for the socket."""
 
 # Pinball Agent Settings
-DECISION_MODE = "real_player"
+DECISION_MODE = "experience"
 """str: The decision mode to use (Random, DQN Agent, Classification Model)."""
 

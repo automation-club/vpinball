@@ -36,9 +36,9 @@ class Classifier(nn.Module):
         -------
         forward(x)
             Forward pass of the model
-        save(path="model.pt")
+        save(path="experience.pt")
             Saves the model to a file
-        load(path="model.pt")
+        load(path="experience.pt")
             Loads the model from a file
 
         """
@@ -105,6 +105,16 @@ class Classifier(nn.Module):
             layers.append(nn.LeakyReLU())
 
         # Add output layer
-        layers.append(nn.Linear((2**(self.hidden_layers+1))*first_hidden_layer_nodes, self.output_size))
+        layers.append(nn.Linear((2 ** self.hidden_layers) * first_hidden_layer_nodes, self.output_size))
 
         return nn.Sequential(*layers)
+
+    def summary(self):
+        """
+        Prints a summary of the model
+
+        Returns
+        -------
+        None
+        """
+        print(self.model)

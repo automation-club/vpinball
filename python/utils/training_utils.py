@@ -13,6 +13,7 @@ parse_txt_to_tensor(file_path=", device)
 
 import torch
 import pandas as pd
+import matplotlib.pyplot as plt
 
 from torch.utils.data import Dataset
 
@@ -51,6 +52,20 @@ def parse_txt_to_tensor(file_path, device):
     return tensor, idx_to_action
 
 
+def plot_loss_history(loss_history):
+    """
+    Plots the loss history.
+
+    Parameters
+    ----------
+    loss_history : list
+        List of loss values
+    """
+
+    plt.plot(loss_history)
+    plt.show()
+
+
 class PinballDataset(Dataset):
     def __init__(self, data):
         """
@@ -84,4 +99,4 @@ class PinballDataset(Dataset):
         torch.Tensor
             Tensor of shape (labels,)
         """
-        return self.data[idx, :-1], self.data[idx, -1]
+        return self.data[idx, :-1], self.data[idx, -1].type(torch.LongTensor)
