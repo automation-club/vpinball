@@ -4942,7 +4942,7 @@ void Player::Render()
       Vertex3Ds pos = m_pactiveball->m_d.m_pos;
       Vertex3Ds vel = m_pactiveball->m_d.m_vel;
       std::string posAndVelXYZ
-         = "BALL POS," + float_to_str(pos.x) + "," + float_to_str(pos.y) + "," + float_to_str(pos.z) + "," + float_to_str(vel.x) + "," + float_to_str(vel.y) + "," + float_to_str(vel.z);
+         = "BALL INFO," + float_to_str(pos.x) + "," + float_to_str(pos.y) + "," + float_to_str(pos.z) + "," + float_to_str(vel.x) + "," + float_to_str(vel.y) + "," + float_to_str(vel.z);
 #ifdef DEBUG
       DebugPrint(0, 80, "Pos: ", false);
       DebugPrint(0, 100, float_to_str(pos.x).c_str(), false);
@@ -4965,7 +4965,7 @@ void Player::Render()
    }
    else
    {
-      g_pplayer->SendRequestToPython("NOTHING");
+      g_pplayer->SendRequestToPython("NO BALL ON FIELD");
    }
    
 

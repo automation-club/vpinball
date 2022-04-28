@@ -10,7 +10,7 @@
 #define DEFAULT_PLAYER_FS_WIDTH 1920
 #define DEFAULT_PLAYER_FS_REFRESHRATE 60
 
-#define logging true
+#define logging false
 
 #if logging
     // change file name to whatever you want, files will be saved to the runs/ folder

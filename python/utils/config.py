@@ -6,6 +6,8 @@ VPINBALL_EXECUTABLE_PATH = Path("../x64/Debug/VPinballX.exe")
 # Socket Configuration
 PORT = 5555
 """int: Port to use for the socket."""
+SOCKET_VERBOSE = True
+"""bool: Whether to print socket messages."""
 
 # Pinball Agent Settings
 DECISION_MODE = "experience"

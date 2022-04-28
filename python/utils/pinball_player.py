@@ -1,5 +1,8 @@
 import numpy as np
 import torch
+import utils.config as config
+
+from utils.models import Classifier
 
 class PinballPlayer:
     """
@@ -25,8 +28,8 @@ class PinballPlayer:
         self._mode = mode
         self._server = socket_server
         self._action_space = ['L', 'R', 'B', 'N']
-        self._play_pinball()
         self._model = self._load_model()
+        self._play_pinball()
 
     def _play_pinball(self):
         """
@@ -42,6 +45,11 @@ class PinballPlayer:
             message = self._server.receive_message().split(",")
             message_type = message[0]
             observation = message[1:]
+            observation = [float(x) for x in observation]
+
+            # Print socket communication if enabled
+            if config.SOCKET_VERBOSE:
+                print("Received message: ", message)
 
             # Process observation and take next action accordingly
             if message_type == "BALL INFO":  # Ball is in play
@@ -63,9 +71,14 @@ class PinballPlayer:
         model : torch.nn.Module
             The model to use.
         """
-        model = torch.load("./saved_models/experience.pt")
-        model.eval()
+        model = None
+        if self._mode == "dqn_agent":
+            model = torch.load("saved_models/dqn_model.pt")
+        elif self._mode == "experience":
+            model = Classifier(input_size=6, output_size=3, hidden_layers=3)
+            model.model.load_state_dict(torch.load("saved_models/experience.pt"))
 
+        model.eval()
         return model
 
     def _choose_action(self, observation):
@@ -83,6 +96,7 @@ class PinballPlayer:
             The action to take.
 
         """
+
         if self._mode == "random":
             return self._random_action()
         elif self._mode == "dqn_agent":
@@ -90,7 +104,7 @@ class PinballPlayer:
         elif self._mode == "real_player":
             return ""
         elif self._mode == "experience":
-            pass
+            return self._experience_replay_action(observation)
         else:
             print("Error: Unknown mode")
 
@@ -120,6 +134,25 @@ class PinballPlayer:
             The action to take.
         """
         return None
+
+    def _experience_replay_action(self, observation):
+        """
+        Determines the action to take based on the observation using an experience replay agent
+
+        Parameters
+        ----------
+        observation : list
+            The observation of the game state.
+
+        Returns
+        -------
+        str
+            The action to take.
+        """
+        pred = self._model(torch.tensor(observation, dtype=torch.float32))
+        action_idx = torch.argmax(pred).item()
+        print(self._model.action_space[action_idx])
+        return ""
 
     def _launch_ball(self):
         """

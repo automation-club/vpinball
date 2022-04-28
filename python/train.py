@@ -2,7 +2,7 @@ import torch
 import itertools
 
 from torch.utils.data import DataLoader
-from utils.training_utils import PinballDataset
+from utils.training_utils import ExperienceLearningDataset
 from utils.models import Classifier
 from utils import training_utils
 
@@ -15,8 +15,11 @@ if __name__ == "__main__":
     training_data, idx_to_action_mapping = training_utils.parse_txt_to_tensor(
         file_path="../runs/experience-learning.txt", device=device)
 
+    print(idx_to_action_mapping)
+    exit()
+
     # Create data loader
-    pinball_dataset = PinballDataset(training_data)
+    pinball_dataset = ExperienceLearningDataset(training_data)
     data_loader = torch.utils.data.DataLoader(pinball_dataset, batch_size=64, shuffle=True)
 
     # Create model
@@ -57,7 +60,7 @@ if __name__ == "__main__":
                 loss_history.append(loss.item())
 
     # Save the model
-    model.save("./saved_models/experience.pt")
+    model.save("./saved_models/experience1.pt")
 
     # Plot the loss history
     training_utils.plot_loss_history(loss_history)

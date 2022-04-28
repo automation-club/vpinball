@@ -66,7 +66,7 @@ def plot_loss_history(loss_history):
     plt.show()
 
 
-class PinballDataset(Dataset):
+class ExperienceLearningDataset(Dataset):
     def __init__(self, data):
         """
         Parameters

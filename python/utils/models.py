@@ -1,4 +1,5 @@
 import torch
+import pandas as pd
 
 from torch import nn
 
@@ -47,6 +48,7 @@ class Classifier(nn.Module):
         self.output_size = output_size
         self.hidden_layers = hidden_layers
         self.model = self._create_classifier()
+        self.action_space = self.assign_idx_to_class("../runs/experience-learning.txt")
 
     def forward(self, x):
         """
@@ -61,6 +63,31 @@ class Classifier(nn.Module):
             Output tensor
         """
         return self.model(x)
+
+    @staticmethod
+    def assign_idx_to_class(label_file_path):
+        """
+        Assigns a class name to a class index
+
+        Parameters
+        ----------
+        idx : int
+            Class index
+        label_file_path : str
+            File path to the label file
+
+        Returns
+        -------
+        dict
+            Dictionary mapping class index to class name
+        """
+        names = ["Info Type", "X", "Y", "Z", "VelX", "VelY", "VelZ", "Action"]
+        df = pd.read_table(label_file_path, sep=",", names=names)
+        # Map actions to integers and save mapping
+        df["Action"] = df["Action"].astype("category")
+        idx_to_action = dict(enumerate(df["Action"].cat.categories))
+
+        return idx_to_action
 
     def save(self, path):
         """
