@@ -15,12 +15,6 @@ This is the LAHS Automation Club fork
 
 
 
-## Features
-
-- Simulates pinball table physics and renders the table with DirectX
-- Simple editor to (re-)create any kind of pinball table
-- Table logic (and game rules) can be controlled via Visual Basic Script
-- Over 950 real/unique pinball machines, plus over 350 original creations were rebuilt/designed using the Visual Pinball X editor (over 2000 if one counts all released tables, incl. MODs and different variants), and even more when including its predecessor versions (Visual Pinball 9.X)
-- Emulation of real pinball machines via [Visual PinMAME](https://github.com/vpinball/pinmame) is possible via Visual Basic Script
-- Supports configurable camera views (for example for correct display in virtual cabinets)
-- Support for Stereo3D output and Tablet/Touch input
+## Contact for more info
+Github User: @arhanjain
+Email: arhanj@uw.edu or arhan.j04@gmail.com
