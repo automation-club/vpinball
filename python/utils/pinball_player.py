@@ -4,6 +4,7 @@ import utils.config as config
 
 from utils.models import Classifier
 
+
 class PinballPlayer:
     """
     This class represents a player in a pinball game and carries out decision making in the game.
@@ -27,9 +28,36 @@ class PinballPlayer:
         """
         self._mode = mode
         self._server = socket_server
-        self._action_space = ['L', 'R', 'B', 'N']
+        self.action_space = ['L', 'R', 'B', 'N']
         self._model = self._load_model()
-        self._play_pinball()
+        # self._play_pinball()
+
+
+    def step(self, action):
+        self._server.send_message(action)
+
+    def observe(self):
+        # Get the observation from the game
+        message = self._server.receive_message().split(",")
+        message_type = message[0]
+        observation = message[1:]
+        observation = [float(x) for x in observation]
+
+        # Print socket communication if enabled
+        if config.SOCKET_VERBOSE:
+            print("Received message: ", message)
+
+        # Process observation and take next action accordingly
+        if message_type == "BALL INFO":  # Ball is in play
+            return observation
+        elif message_type == "BALL CREATED":  # New ball put into play
+            self._launch_ball()
+        elif message_type == "NO BALL ON FIELD":  # No active ball on the field
+            self._start_new_game()
+        else:  # Any other calls (not relevant)
+            self._server.send_message("")  # Empty action response
+
+        return None
 
     def _play_pinball(self):
         """
@@ -78,7 +106,8 @@ class PinballPlayer:
             model = Classifier(input_size=6, output_size=3, hidden_layers=3)
             model.model.load_state_dict(torch.load("saved_models/experience.pt"))
 
-        model.eval()
+        if model is not None:
+            model.eval()
         return model
 
     def _choose_action(self, observation):
@@ -117,7 +146,7 @@ class PinballPlayer:
         str
             The action to take.
         """
-        return np.random.choice(self._action_space)
+        return np.random.choice(self.action_space)
 
     def _dqn_action(self, observation):
         """
@@ -151,8 +180,10 @@ class PinballPlayer:
         """
         pred = self._model(torch.tensor(observation, dtype=torch.float32))
         action_idx = torch.argmax(pred).item()
-        print(self._model.action_space[action_idx])
-        return ""
+        action = self._model.action_space[action_idx]
+        if action != "N":
+            print(action)
+        return action
 
     def _launch_ball(self):
         """

@@ -6,7 +6,8 @@ from utils.training_utils import ExperienceLearningDataset
 from utils.models import Classifier
 from utils import training_utils
 
-if __name__ == "__main__":
+
+def train_classifier():
     # Device configuration
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -16,7 +17,6 @@ if __name__ == "__main__":
         file_path="../runs/experience-learning.txt", device=device)
 
     print(idx_to_action_mapping)
-    exit()
 
     # Create data loader
     pinball_dataset = ExperienceLearningDataset(training_data)
@@ -64,3 +64,11 @@ if __name__ == "__main__":
 
     # Plot the loss history
     training_utils.plot_loss_history(loss_history)
+
+
+def train_dqn():
+
+
+
+if __name__ == "__main__":
+    train_dqn()

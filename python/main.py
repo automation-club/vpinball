@@ -1,8 +1,21 @@
 import threading
+import numpy as np
 
 from utils import config
 from utils.socket_server import SocketServer
 from utils.pinball_player import PinballPlayer
+
+
+def train_dqn(mode, server):
+    np.random.seed(123)
+    env = PinballPlayer(mode=config.DECISION_MODE, socket_server=server)
+    while True:
+        observation = None
+        while observation is None:
+            observation = env.observe()
+
+        action = np.random.choice(env.action_space)
+        env.step(action)
 
 
 def main():
@@ -10,7 +23,7 @@ def main():
     server = SocketServer(config.PORT)
 
     # Thread for handling playing pinball
-    player_thread = threading.Thread(target=PinballPlayer, args=(config.DECISION_MODE, server), daemon=True)
+    player_thread = threading.Thread(target=train_dqn, args=(config.DECISION_MODE, server), daemon=True)
     # Thread for stopping program
     stop_thread = threading.Thread(target=SocketServer.stop_server)
     # Thread for launching VPinball

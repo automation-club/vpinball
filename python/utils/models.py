@@ -17,6 +17,16 @@ from torch import nn
 #         else:
 #             print("Model type not supported")
 
+class DQN(nn.Module):
+    def __init__(self, input_size, output_size):
+        self.main =
+
+    def _create_agent(self, input_size, output_size):
+        return nn.Sequential([
+            nn.Linear(input_size, 32),
+            nn.ReLU(),
+            nn.Linear()
+        ])
 
 class Classifier(nn.Module):
     """
@@ -110,6 +120,7 @@ class Classifier(nn.Module):
             Path to load the model from
         """
         self.model.load_state_dict(torch.load(path))
+
 
     def _create_classifier(self):
         """
