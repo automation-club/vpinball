@@ -8,8 +8,13 @@ from utils.pinball_player import PinballPlayer
 
 def train_dqn(mode, server):
     np.random.seed(123)
+
+    TRAINING_EPISODES = 10
+
     env = PinballPlayer(mode=config.DECISION_MODE, socket_server=server)
-    while True:
+    for episode in range(TRAINING_EPISODES):
+        print(f"Starting Training Episode {episode+1}...")
+        total
         observation = None
         while observation is None:
             observation = env.observe()

@@ -1,7 +1,7 @@
 import torch
 import pandas as pd
 
-from utils.old_models import Classifier
+# from utils.old_models import Classifier
 from torch.utils.data import Dataset
 
 
@@ -18,11 +18,19 @@ def parse_file(file_path):
 
     return torch_tensor
 
+#
+# model = Classifier(input_size=6, output_size=3, hidden_layers=3)
+# print("Model's state_dict:")
+# for param_tensor in model.state_dict():
+#     print(param_tensor, "\t", model.state_dict()[param_tensor].size())
+#
+# model.model.load_state_dict(torch.load("saved_models/experience.pt"))
+# model.eval()
 
-model = Classifier(input_size=6, output_size=3, hidden_layers=3)
-print("Model's state_dict:")
-for param_tensor in model.state_dict():
-    print(param_tensor, "\t", model.state_dict()[param_tensor].size())
 
-model.model.load_state_dict(torch.load("saved_models/experience.pt"))
-model.eval()
+x = torch.tensor([0,1,2,3,])
+
+a = torch.tensor([[0,0,0,0],[0,0,0,0],[0,0,0,0], [0,0,0,0]])
+
+a[:, x] = 1
+print(a)

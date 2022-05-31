@@ -1,7 +1,10 @@
 import torch
 import pandas as pd
+import copy
+import numpy as np
 
 from torch import nn
+from collections import deque
 
 
 # class Model:
@@ -18,15 +21,47 @@ from torch import nn
 #             print("Model type not supported")
 
 class DQN(nn.Module):
+    """
+
+    """
     def __init__(self, input_size, output_size):
-        self.main =
+        self.main = self._create_agent(input_size, output_size)
+        self.target = copy.deepcopy(self.main)
+        self.replay_memory = deque(maxlen=100000)  # [state, action, reward, state', game_over]
+        self.steps_since_target_updated = 0
+        self.LEARNING_RATE = 0.5
+        self.BATCH_SIZE = 32
+        self.DISCOUNT_FACTOR = 0.5
+        self.criterion = nn.HuberLoss()
+        self.optimizer = torch.optim.Adam()
 
     def _create_agent(self, input_size, output_size):
-        return nn.Sequential([
-            nn.Linear(input_size, 32),
+        return nn.Sequential(
+            nn.Linear(input_size, 16),
             nn.ReLU(),
-            nn.Linear()
-        ])
+            nn.Linear(16, 32),
+        )
+
+    def train_agent(self):
+        if len(self.replay_memory) < 1000:
+            return
+        batch = np.random.choice(self.replay_memory, size=self.BATCH_SIZE)
+        batch = torch.tensor(batch)
+
+        states = batch[:, 0]
+        q_values = self.model(states)
+
+        future_states = batch[:, 3]
+        future_q_values = self.target(future_states)
+
+        temporal_difference = batch[:, 2] + self.DISCOUNT_FACTOR*torch.max(future_q_values, dim=1)*batch[:, 4]
+
+        for index, (action) in enumerate(batch[:,4]):
+            q_values[index, action] = (1-self.LEARNING_RATE)*q_values[index, action] + self.LEARNING_RATE*temporal_difference[index]
+
+
+
+
 
 class Classifier(nn.Module):
     """

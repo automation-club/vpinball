@@ -52,6 +52,7 @@ class PinballPlayer:
             return observation
         elif message_type == "BALL CREATED":  # New ball put into play
             self._launch_ball()
+            return "NEW GAME"
         elif message_type == "NO BALL ON FIELD":  # No active ball on the field
             self._start_new_game()
         else:  # Any other calls (not relevant)
